@@ -44,6 +44,9 @@ def read_file(_path, delim='\t'):
         delim = ' '
     with open(_path, 'r') as f:
         for line in f:
+            ### Dan change
+            delim = '\t'
+            ###
             line = line.strip().split(delim)
             line = [float(i) for i in line]
             data.append(line)
