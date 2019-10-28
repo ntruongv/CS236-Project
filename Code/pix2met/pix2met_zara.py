@@ -6,10 +6,10 @@ def pix2met(pix_arr):
        output: met_array: shape (N, 2), each row is (x,y) meter location
        """
        hom_mat = np.array([[0.02104651, 0, 0], [0, -0.0236598, 13.74680446], [0, 0, 1]])
-       pix_arr_z = np.hstack(pix_arr, np.zeros(pix_arr.shape[0])+1)
+       pix_arr_z = np.hstack([pix_arr, np.zeros((pix_arr.shape[0],1))+1])
        met_loc_z = pix_arr_z.dot(hom_mat.T)
        met_loc = met_loc_z/met_loc_z[:,-1]
-       return met_loc[:,:1]
+       return met_loc[:,:2]
 
 def met2pix(met_arr):
        """
@@ -18,10 +18,10 @@ def met2pix(met_arr):
        """
        hom_mat = np.array([[0.02104651, 0, 0], [0, -0.0236598, 13.74680446], [0, 0, 1]])
        inv_mat = np.linalg.pinv(hom_mat)
-       met_arr_z = np.hstack(met_arr, np.zeros(met_arr.shape[0])+1)
+       met_arr_z = np.hstack([met_arr, np.zeros((met_arr.shape[0],1))+1])
        pix_loc_z = met_arr_z.dot(inv_mat.T)
        pix_loc = pix_loc_z/pix_loc_z[:,-1]
-       return pix_loc[:,:1]
+       return pix_loc[:,:2]
 
 def all_local_info(global_info, neigh_size = 1):
        """
