@@ -53,6 +53,13 @@ def local_info(curr_loc, all_local_info, g_size = 36):
        output: local_inf: shape (N, (2*neigh_size+1)^2), each row contains local info
        """ 
        pix_loc =  met2pix(curr_loc)
+       W = all_local_info.shape[1]
+       H = all_local_info.shape[0]
        pix_loc = pix_loc//g_size
-       local_inf = all_local_info[pix_loc[:,0], pix_loc[:,1]]
+       #BOUNDARY ISSUE
+       pix_loc[:,0][pix_loc[:,0]>W-1] = W-1 
+       pix_loc[pix_loc<0] = 0
+       pix_loc[:,1][pix_loc[:,1]>H-1] = H-1 
+       # x,y issue
+       local_inf = all_local_info[pix_loc[:,1], pix_loc[:,0]]
        return local_inf
