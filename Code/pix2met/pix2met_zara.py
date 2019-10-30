@@ -33,16 +33,16 @@ def all_local_info(global_info=zara_glob_info, neigh_size = 1):
               neigh_size: int: max grid distance S to be considered a neighbor 
        output: local: shape (grid_H, grid_W, (2*neigh_size+1)^2) of local information
        """
-       enlarge = torch.zeros((global_info.shape[0]+2*neigh_size, global_info.shape[1]+2*neigh_size))
+       enlarge = torch.zeros((global_info.shape[0]+2*neigh_size, global_info.shape[1]+2*neigh_size), device="cuda")
        enlarge[neigh_size:(neigh_size+global_info.shape[0]), neigh_size:(neigh_size+global_info.shape[1])] = global_info
-       local = torch.zeros((global_info.shape[0], global_info.shape[1], (2*neigh_size+1)**2))
+       local = torch.zeros((global_info.shape[0], global_info.shape[1], (2*neigh_size+1)**2), device="cuda")
        for i in range(global_info.shape[0]):
               for j in range(global_info.shape[1]):
                      temp = [] 
                      for k in range(i, i+2*neigh_size+1):
                             for t in range(j, j+2*neigh_size+1):
                                    temp.append(enlarge[k,t])
-                     local[i,j,:] = torch.tensor(temp)
+                     local[i,j,:] = torch.tensor(temp, device="cuda")
        return local
 
 def local_info(curr_loc, all_local_info, g_size = 36):
@@ -64,10 +64,6 @@ def local_info(curr_loc, all_local_info, g_size = 36):
        
        pix_loc = pix_loc.long()
        
-       print("torch.max(pix_loc): {}".format(torch.max(pix_loc)))
-       print("torch.argmax(pix_loc): {}".format(torch.argmax(pix_loc)))
-       print("all_local_info.shape: {}".format(all_local_info.shape))
-
        # x,y issue
        local_inf = all_local_info[pix_loc[:,1], pix_loc[:,0]]
 

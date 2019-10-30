@@ -521,6 +521,9 @@ class TrajectoryGenerator(nn.Module):
             #
             pool_h = self.pool_net(final_encoder_h, seq_start_end, end_pos)
             # Construct input hidden states for decoder
+            print(final_encoder_h.is_cuda)
+            print(pool_h.is_cuda)
+            print(local_context.is_cuda)
             mlp_decoder_context_input = torch.cat(
                 [final_encoder_h.view(-1, self.encoder_h_dim), pool_h, local_context], dim=1) # NHI: concatenate local info
         else:
