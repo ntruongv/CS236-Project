@@ -15,11 +15,13 @@ from sgan.data.loader import data_loader
 from sgan.losses import gan_g_loss, gan_d_loss, l2_loss
 from sgan.losses import displacement_error, final_displacement_error
 
-from sgan.models import TrajectoryGenerator, TrajectoryDiscriminator
+sys.path.append("/home/dansj/CS236-Project/Code/sgan")
+from models_w_local_context import TrajectoryGenerator, TrajectoryDiscriminator
 from sgan.utils import int_tuple, bool_flag, get_total_norm
 from sgan.utils import relative_to_abs, get_dset_path
 
-from pix2met import pix2met_zara # NHI: script to generate local data
+sys.path.append("/home/dansj/CS236-Project/Code/pix2met")
+import pix2met_zara # NHI: script to generate local data
 
 torch.backends.cudnn.benchmark = True
 
@@ -57,7 +59,7 @@ parser.add_argument('--noise_mix_type', default='ped')
 parser.add_argument('--clipping_threshold_g', default=0, type=float)
 parser.add_argument('--g_learning_rate', default=5e-4, type=float)
 parser.add_argument('--g_steps', default=1, type=int)
-parser.add_argument('--local_neigh_size', default = 1, type =int) #NHI: local info neighbor size
+parser.add_argument('--local_neigh_size', default=1, type=int) #NHI: local info neighbor size
 
 # Pooling Options
 parser.add_argument('--pooling_type', default='pool_net')
@@ -248,7 +250,7 @@ def main(args):
                 step_type = 'd'
                 losses_d = discriminator_step(args, batch, generator,
                                               discriminator, d_loss_fn,
-                                              optimizer_d)
+                                              optimizer_d, processed_local_info)
                 checkpoint['norm_d'].append(
                     get_total_norm(discriminator.parameters()))
                 d_steps_left -= 1
@@ -298,12 +300,12 @@ def main(args):
                 # Check stats on the validation set
                 logger.info('Checking stats on val ...')
                 metrics_val = check_accuracy(
-                    args, val_loader, generator, discriminator, d_loss_fn
+                    args, val_loader, generator, discriminator, d_loss_fn, processed_local_info
                 )
                 logger.info('Checking stats on train ...')
                 metrics_train = check_accuracy(
                     args, train_loader, generator, discriminator,
-                    d_loss_fn, limit=True
+                    d_loss_fn, processed_local_info, limit=True
                 )
 
                 for k, v in sorted(metrics_val.items()):
@@ -460,9 +462,9 @@ def generator_step(
 
     return losses
 
-
+#NHI: processed_local_info -> local to generate fake traj
 def check_accuracy(
-    args, loader, generator, discriminator, d_loss_fn, limit=False, processed_local_info #NHI: local to generate fake traj
+    args, loader, generator, discriminator, d_loss_fn, processed_local_info, limit=False
 ):
     d_losses = []
     metrics = {}

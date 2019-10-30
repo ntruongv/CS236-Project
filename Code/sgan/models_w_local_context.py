@@ -1,6 +1,9 @@
 import torch
 import torch.nn as nn
-from Code.pix2met import pix2met_zara 
+
+import sys
+sys.path.append("/home/dansj/CS236-Project/Code/pix2met")
+import pix2met_zara # NHI: script to generate local data
 
 
 def make_mlp(dim_list, activation='relu', batch_norm=True, dropout=0):

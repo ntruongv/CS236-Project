@@ -1,7 +1,7 @@
 import numpy as np
 import torch 
 
-zara_glob_info = torch.tensor(np.genfromtxt('Code/pix2met/obj_info.csv', delimiter=''))
+zara_glob_info = torch.tensor(np.genfromtxt('/home/dansj/CS236-Project/Code/pix2met/obj_info.csv', delimiter=''))
 
 def pix2met(pix_arr):
        """
