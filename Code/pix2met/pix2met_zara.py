@@ -21,7 +21,7 @@ def met2pix(met_arr):
        """
        hom_mat = torch.tensor([[0.02104651, 0, 0], [0, -0.0236598, 13.74680446], [0, 0, 1]])
        inv_mat = hom_mat.inverse()
-       met_arr_z = torch.cat((met_arr, np.zeros((met_arr.shape[0],1))+1), dim=1)
+       met_arr_z = torch.cat((met_arr, torch.zeros((met_arr.shape[0],1))+1), dim=1)
        pix_loc_z = met_arr_z.mm(inv_mat.T)
        pix_loc = pix_loc_z/(pix_loc_z[:,-1].reshape(-1,1))
        return pix_loc[:,:2]
