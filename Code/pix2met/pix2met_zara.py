@@ -19,10 +19,10 @@ def met2pix(met_arr):
        input: met_array: shape (N, 2), each row is (x,y) meter location
        output: pix_array: shape (N, 2), each row is (x,y) pixel location
        """
-       hom_mat = torch.tensor([[0.02104651, 0, 0], [0, -0.0236598, 13.74680446], [0, 0, 1]])
+       hom_mat = torch.tensor([[0.02104651, 0, 0], [0, -0.0236598, 13.74680446], [0, 0, 1]], device="cuda")
        inv_mat = hom_mat.inverse()
-       met_arr_z = torch.cat((met_arr, torch.zeros((met_arr.shape[0],1))+1), dim=1)
-       pix_loc_z = met_arr_z.mm(inv_mat.T)
+       met_arr_z = torch.cat((met_arr, torch.zeros((met_arr.shape[0],1), device="cuda")+1), dim=1)
+       pix_loc_z = met_arr_z.mm(inv_mat.transpose(0, 1))
        pix_loc = pix_loc_z/(pix_loc_z[:,-1].reshape(-1,1))
        return pix_loc[:,:2]
 
@@ -53,13 +53,22 @@ def local_info(curr_loc, all_local_info, g_size = 36):
        output: local_inf: shape (N, (2*neigh_size+1)^2), each row contains local info
        """ 
        pix_loc =  met2pix(curr_loc)
+       pix_loc = torch.floor(pix_loc/g_size)
+
        W = all_local_info.shape[1]
        H = all_local_info.shape[0]
-       pix_loc = pix_loc//g_size
        #BOUNDARY ISSUE
        pix_loc[:,0][pix_loc[:,0]>W-1] = W-1 
        pix_loc[pix_loc<0] = 0
        pix_loc[:,1][pix_loc[:,1]>H-1] = H-1 
+       
+       pix_loc = pix_loc.long()
+       
+       print("torch.max(pix_loc): {}".format(torch.max(pix_loc)))
+       print("torch.argmax(pix_loc): {}".format(torch.argmax(pix_loc)))
+       print("all_local_info.shape: {}".format(all_local_info.shape))
+
        # x,y issue
        local_inf = all_local_info[pix_loc[:,1], pix_loc[:,0]]
+
        return local_inf
