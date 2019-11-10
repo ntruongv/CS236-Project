@@ -1,6 +1,6 @@
 # import torchfile
 from torch.utils.data import DataLoader
-from networks import Vgg16
+from networks import PatchVgg16
 from torch.autograd import Variable
 from torch.optim import lr_scheduler
 from torchvision import transforms
@@ -13,6 +13,8 @@ import yaml
 import numpy as np
 import torch.nn.init as init
 import time
+import itertools
+from PIL import Image
 
 """ Use the model from https://github.com/abhiskk/fast-neural-style/blob/master/neural_style/utils.py """
     
@@ -24,11 +26,11 @@ def load_vgg16(model_dir):
             os.system('wget https://download.pytorch.org/models/vgg16-397923af.pth -O ' + os.path.join(model_dir, 'vgg16.pth'))
         vgglua = vgg16()
         vgglua.load_state_dict(torch.load(os.path.join(model_dir, 'vgg16.pth')))
-        vgg = Vgg16()
+        vgg = PatchVgg16()
         for (src, dst) in zip(vgglua.parameters(), vgg.parameters()):
             dst.data[:] = src
         torch.save(vgg.state_dict(), os.path.join(model_dir, 'vgg16.weight'))
-    vgg = Vgg16()
+    vgg = PatchVgg16()
     vgg.load_state_dict(torch.load(os.path.join(model_dir, 'vgg16.weight')))
     return vgg
 
@@ -44,3 +46,51 @@ def vgg_preprocess(batch):
     mean[:, 2, :, :] = 123.680
     batch = batch.sub(Variable(mean)) # subtract mean
     return batch
+
+class LocalGraph:
+    def __init__(self, image):
+        self.vgg = load_vgg16('models')
+        self.vgg.eval()
+        for param in self.vgg.parameters():
+            param.requires_grad = False
+        self.trns = transforms.ToTensor()
+        self.image = image
+        width, height = image.size
+        self.image_h = height
+        self.image_w = width
+        self.cell_h = 48
+        self.cell_gap = 16
+    def points_to_crop(self, pts):
+        feat = [self.trns(self.image.crop((x[0]-self.cell_h/2, x[1]-self.cell_h/2, x[0]+self.cell_h/2, x[1]+self.cell_h/2))) for x in pts]
+        feat = torch.stack(feat)
+        feat = vgg_preprocess(feat)
+        feat = self.vgg(feat)
+        return feat
+
+    def extract_batch(self, x, y):
+        left, top = [],[]
+        valid_l, valid_t = [], []
+        for i in range(-1,2):
+            left_i = x+i*self.cell_gap
+            top_i = y+i*self.cell_gap
+            if (self.cell_h/2) < left_i < (self.image_w-self.cell_h/2):
+                left.append(left_i)
+                valid_l.append(True)
+            else:
+                valid_l.append(False)
+            if (self.cell_h/2) < top_i < (self.image_h-self.cell_h/2):
+                top.append(top_i)
+                valid_t.append(True)
+            else:
+                valid_t.append(False)
+            
+        cells = list(itertools.product(left,top))
+        valid = [all(x) for x in itertools.product(valid_l,valid_t)]
+        feat = self.points_to_crop(cells)
+        _, c, h, w = feat.size()
+        fin_feat = torch.zeros((len(valid), c, h, w))
+        fin_feat[valid] = feat
+        print(valid)
+        return fin_feat
+        
+
