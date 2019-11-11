@@ -4,6 +4,8 @@ import torch.nn as nn
 import sys
 sys.path.append("/home/dansj/CS236-Project/Code/pix2met")
 import pix2met_zara # NHI: script to generate local data
+sys.path.append("/home/dansj/CS236-Project/Code/vgg")
+from utils import vgg_preprocess, load_vgg16, LocalGraph # NHI: add vgg utils 
 
 
 def make_mlp(dim_list, activation='relu', batch_norm=True, dropout=0):
@@ -436,7 +438,7 @@ class TrajectoryGenerator(nn.Module):
 
         # Decoder Hidden
         if pooling_type:
-            input_dim = encoder_h_dim + bottleneck_dim + (2*local_neigh_size+1)**2  #NHI: when pooling also add local info 
+            input_dim = encoder_h_dim + bottleneck_dim + 41472 #(2*local_neigh_size+1)**2  #NHI: when pooling also add local info  NOW GRAPH WARNING HARD CODE
         else:
             input_dim = encoder_h_dim
 
@@ -517,7 +519,10 @@ class TrajectoryGenerator(nn.Module):
         if self.pooling_type:
             end_pos = obs_traj[-1, :, :]
             # NHI: compute  context from current end position 
-            local_context = pix2met_zara.local_info(end_pos, all_local_info)
+            #local_context = pix2met_zara.local_info(end_pos, all_local_info)
+            # NHI: add graph context
+            pix_end_pos = pix2met_zara.met2pix(end_pos)
+            local_context = all_local_info.extract_batch(pix_end_pos)
             #
             pool_h = self.pool_net(final_encoder_h, seq_start_end, end_pos)
             # Construct input hidden states for decoder
