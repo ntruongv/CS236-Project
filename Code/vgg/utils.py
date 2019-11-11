@@ -1,6 +1,6 @@
 # import torchfile
 from torch.utils.data import DataLoader
-from networks import PatchVgg16
+from vgg.networks import PatchVgg16
 from torch.autograd import Variable
 from torch.optim import lr_scheduler
 from torchvision import transforms

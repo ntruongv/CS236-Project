@@ -12,8 +12,9 @@ from sgan.utils import relative_to_abs, get_dset_path
 
 from pix2met import pix2met_zara
 
-sys.path.append("/home/dansj/CS236-Project/Code/vgg")
-from utils import vgg_preprocess, load_vgg16, LocalGraph # NHI: add vgg utils 
+codepath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(codepath)
+from vgg.utils import vgg_preprocess, load_vgg16, LocalGraph # NHI: add vgg utils 
 from PIL import Image
 
 parser = argparse.ArgumentParser()

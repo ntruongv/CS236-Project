@@ -1,11 +1,13 @@
 import torch
 import torch.nn as nn
+import os
 
 import sys
-sys.path.append("/home/dansj/CS236-Project/Code/pix2met")
-import pix2met_zara # NHI: script to generate local data
-sys.path.append("/home/dansj/CS236-Project/Code/vgg")
-from utils import vgg_preprocess, load_vgg16, LocalGraph # NHI: add vgg utils 
+codepath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(codepath)
+sys.path.append(os.path.join(codepath, "models"))
+import pix2met.pix2met_zara as pix2met_zara# NHI: script to generate local data
+from vgg.utils import vgg_preprocess, load_vgg16, LocalGraph # NHI: add vgg utils 
 
 
 def make_mlp(dim_list, activation='relu', batch_norm=True, dropout=0):
