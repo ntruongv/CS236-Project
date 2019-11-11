@@ -67,7 +67,7 @@ class LocalGraph:
         feat = self.vgg(feat)
         return feat
 
-    def extract_batch(self, x, y):
+    def extract_point(self, x, y):
         left, top = [],[]
         valid_l, valid_t = [], []
         for i in range(-1,2):
@@ -92,5 +92,37 @@ class LocalGraph:
         fin_feat[valid] = feat
         print(valid)
         return fin_feat
+    
+    def extract_batch(self, batch):
+        n_batch = len(batch)
+        g_cells, g_valid = [], []
+        for pt in batch:
+            x = pt[0]
+            y = pt[1]
+            left, top = [],[]
+            valid_l, valid_t = [], []
+            for i in range(-1,2):
+                left_i = x+i*self.cell_gap
+                top_i = y+i*self.cell_gap
+                if (self.cell_h/2) < left_i < (self.image_w-self.cell_h/2):
+                    left.append(left_i)
+                    valid_l.append(True)
+                else:
+                    valid_l.append(False)
+                if (self.cell_h/2) < top_i < (self.image_h-self.cell_h/2):
+                    top.append(top_i)
+                    valid_t.append(True)
+                else:
+                    valid_t.append(False)
+                
+            cells = list(itertools.product(left,top))
+            valid = [all(x) for x in itertools.product(valid_l,valid_t)]
+            g_cells.extend(cells)
+            g_valid.extend(valid)
+        feat = self.points_to_crop(g_cells)
+        _, c, h, w = feat.size()
+        fin_feat = torch.zeros((len(g_valid), c, h, w))
+        fin_feat[g_valid] = feat
+        return fin_feat.view(n_batch, -1, c, h, w)
         
 

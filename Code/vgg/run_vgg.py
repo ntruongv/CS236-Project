@@ -10,5 +10,5 @@ from torchvision import transforms
 
 img = Image.open("frame_1.png")
 lgph = LocalGraph(img)
-# pass (x,y) for local features
-print(lgph.extract_batch(25,25).shape)
+# pass batch of (x,y) for local features
+print(lgph.extract_batch([[25,25], [30, 30]]).shape)
