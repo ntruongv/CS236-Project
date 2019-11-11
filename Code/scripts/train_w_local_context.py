@@ -22,6 +22,9 @@ from sgan.utils import relative_to_abs, get_dset_path
 
 sys.path.append("/home/dansj/CS236-Project/Code/pix2met")
 import pix2met_zara # NHI: script to generate local data
+sys.path.append("/home/dansj/CS236-Project/Code/vgg")
+from utils import vgg_preprocess, load_vgg16, LocalGraph # NHI: add vgg utils 
+from PIL import Image
 
 torch.backends.cudnn.benchmark = True
 
@@ -153,7 +156,9 @@ def main(args):
         batch_norm=args.batch_norm,
         local_neigh_size = args.local_neigh_size) # NHI: local neighbor size default is 1 
     
-    processed_local_info = pix2met_zara.all_local_info(neigh_size = args.local_neigh_size)  #NHI: process local info now  
+    #processed_local_info = pix2met_zara.all_local_info(neigh_size = args.local_neigh_size)  #NHI: process local info now  
+    img = Image.open("frame_1.png") #NHI: graph local info
+    processed_local_info = LocalGraph(img)
 
     generator.apply(init_weights)
     generator.type(float_dtype).train()
@@ -368,7 +373,7 @@ def main(args):
 
 
 def discriminator_step(
-    args, batch, generator, discriminator, d_loss_fn, optimizer_d, processed_local_info # NHI: input local info
+    args, batch, generator, discriminator, d_loss_fn, optimizer_d, processed_local_info # NHI: input local info (NOW GRAPH)
 ):
     batch = [tensor.cuda() for tensor in batch]
     (obs_traj, pred_traj_gt, obs_traj_rel, pred_traj_gt_rel, non_linear_ped,
@@ -406,7 +411,7 @@ def discriminator_step(
 
 
 def generator_step(
-    args, batch, generator, discriminator, g_loss_fn, optimizer_g, processed_local_info # NHI: input local info
+    args, batch, generator, discriminator, g_loss_fn, optimizer_g, processed_local_info # NHI: input local info (now GRAPH)
 ):
     batch = [tensor.cuda() for tensor in batch]
     (obs_traj, pred_traj_gt, obs_traj_rel, pred_traj_gt_rel, non_linear_ped,
