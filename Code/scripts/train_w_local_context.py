@@ -15,13 +15,15 @@ from sgan.data.loader import data_loader
 from sgan.losses import gan_g_loss, gan_d_loss, l2_loss
 from sgan.losses import displacement_error, final_displacement_error
 
-sys.path.append("/home/dansj/CS236-Project/Code/sgan")
-from models_w_local_context import TrajectoryGenerator, TrajectoryDiscriminator
+codepath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(codepath)
+from sgan.models_w_local_context import TrajectoryGenerator, TrajectoryDiscriminator
 from sgan.utils import int_tuple, bool_flag, get_total_norm
 from sgan.utils import relative_to_abs, get_dset_path
 
-sys.path.append("/home/dansj/CS236-Project/Code/pix2met")
-import pix2met_zara # NHI: script to generate local data
+import pix2met.pix2met_zara as pix2met_zara # NHI: script to generate local data
+from vgg.utils import vgg_preprocess, load_vgg16, LocalGraph # NHI: add vgg utils 
+from PIL import Image
 
 torch.backends.cudnn.benchmark = True
 
@@ -153,7 +155,10 @@ def main(args):
         batch_norm=args.batch_norm,
         local_neigh_size = args.local_neigh_size) # NHI: local neighbor size default is 1 
     
-    processed_local_info = pix2met_zara.all_local_info(neigh_size = args.local_neigh_size)  #NHI: process local info now  
+    #processed_local_info = pix2met_zara.all_local_info(neigh_size = args.local_neigh_size)  #NHI: process local info now  
+    filepath = os.path.join(codepath, "vgg", "frame_1.png")
+    img = Image.open(filepath) #NHI: graph local info
+    processed_local_info = LocalGraph(img)
 
     generator.apply(init_weights)
     generator.type(float_dtype).train()
@@ -368,7 +373,7 @@ def main(args):
 
 
 def discriminator_step(
-    args, batch, generator, discriminator, d_loss_fn, optimizer_d, processed_local_info # NHI: input local info
+    args, batch, generator, discriminator, d_loss_fn, optimizer_d, processed_local_info # NHI: input local info (NOW GRAPH)
 ):
     batch = [tensor.cuda() for tensor in batch]
     (obs_traj, pred_traj_gt, obs_traj_rel, pred_traj_gt_rel, non_linear_ped,
@@ -406,7 +411,7 @@ def discriminator_step(
 
 
 def generator_step(
-    args, batch, generator, discriminator, g_loss_fn, optimizer_g, processed_local_info # NHI: input local info
+    args, batch, generator, discriminator, g_loss_fn, optimizer_g, processed_local_info # NHI: input local info (now GRAPH)
 ):
     batch = [tensor.cuda() for tensor in batch]
     (obs_traj, pred_traj_gt, obs_traj_rel, pred_traj_gt_rel, non_linear_ped,

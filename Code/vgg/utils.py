@@ -1,6 +1,6 @@
 # import torchfile
 from torch.utils.data import DataLoader
-from networks import PatchVgg16
+from vgg.networks import PatchVgg16
 from torch.autograd import Variable
 from torch.optim import lr_scheduler
 from torchvision import transforms
@@ -124,6 +124,6 @@ class LocalGraph:
         _, c, h, w = feat.size()
         fin_feat = torch.zeros((len(g_valid), c, h, w))
         fin_feat[g_valid] = feat
-        return fin_feat.view(n_batch, -1, c, h, w)
+        return fin_feat.view(n_batch, -1)#, c, h, w)
         
 

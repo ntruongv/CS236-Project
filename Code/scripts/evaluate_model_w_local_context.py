@@ -1,6 +1,7 @@
 import argparse
 import os
 import torch
+import sys
 
 from attrdict import AttrDict
 
@@ -10,6 +11,11 @@ from sgan.losses import displacement_error, final_displacement_error
 from sgan.utils import relative_to_abs, get_dset_path
 
 from pix2met import pix2met_zara
+
+codepath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(codepath)
+from vgg.utils import vgg_preprocess, load_vgg16, LocalGraph # NHI: add vgg utils 
+from PIL import Image
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--model_path', type=str)
@@ -95,7 +101,10 @@ def evaluate(args, loader, generator, num_samples, processed_local_info): #NHI: 
 
 
 def main(args):
-    processed_local_info = pix2met_zara.all_local_info(neigh_size = args.local_neigh_size)  #NHI: process local info now  
+    #processed_local_info = pix2met_zara.all_local_info(neigh_size = args.local_neigh_size)  #NHI: process local info now
+    img = Image.open("frame_1.png") #NHI: graph local info
+    processed_local_info = LocalGraph(img)
+
     if os.path.isdir(args.model_path):
         filenames = os.listdir(args.model_path)
         filenames.sort()
