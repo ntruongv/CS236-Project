@@ -60,6 +60,7 @@ class LocalGraph:
         self.image_w = width
         self.cell_h = 24
         self.cell_gap = 16
+
     def points_to_crop(self, pts):
         feat = [self.trns(self.image.crop((x[0]-self.cell_h/2, x[1]-self.cell_h/2, x[0]+self.cell_h/2, x[1]+self.cell_h/2))) for x in pts]
         feat = torch.stack(feat)
@@ -97,8 +98,8 @@ class LocalGraph:
         n_batch = len(batch)
         g_cells, g_valid = [], []
         for pt in batch:
-            x = pt[0]
-            y = pt[1]
+            x = int(pt[0])
+            y = int(pt[1])
             left, top = [],[]
             valid_l, valid_t = [], []
             for i in range(-1,2):
@@ -122,7 +123,12 @@ class LocalGraph:
         feat = self.points_to_crop(g_cells)
         _, c, h, w = feat.size()
         fin_feat = torch.zeros((len(g_valid), c, h, w))
-        fin_feat[g_valid] = feat
-        return fin_feat.view(n_batch, -1)#, c, h, w)
+        count = 0
+        for i, g_bool in enumerate(g_valid):
+            if(g_bool):
+                fin_feat[i] = feat[count]
+                count +=1
+                
+        return fin_feat.view(n_batch, -1).cuda()#, c, h, w)
         
 
