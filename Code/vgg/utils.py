@@ -48,7 +48,7 @@ def vgg_preprocess(batch):
     return batch
 
 class LocalGraph:
-    def __init__(self, image):
+    def __init__(self, image, cell_h, cell_gap):
         self.vgg = load_vgg16('models')
         self.vgg.eval()
         for param in self.vgg.parameters():
@@ -58,8 +58,9 @@ class LocalGraph:
         width, height = image.size
         self.image_h = height
         self.image_w = width
-        self.cell_h = 24
-        self.cell_gap = 16
+        self.cell_h = cell_h
+        self.cell_gap = cell_gap
+
     def points_to_crop(self, pts):
         feat = [self.trns(self.image.crop((x[0]-self.cell_h/2, x[1]-self.cell_h/2, x[0]+self.cell_h/2, x[1]+self.cell_h/2))) for x in pts]
         feat = torch.stack(feat)
