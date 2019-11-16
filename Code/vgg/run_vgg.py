@@ -1,12 +1,13 @@
-from lclgph import LocalGraph
+from vgg.lclgph import LocalGraph
 from PIL import Image
 import numpy as np
 
 # vgg_model_path = ""
 
-img = Image.open("frame_1.png")
+img = Image.open("vgg/frame_1.png")
 h,w = img.size
 lgph = LocalGraph(img)
+lgph.cuda()
 # pass batch of (x,y) for local features
 pts = np.zeros((100,2))
 pts[:,1] = np.random.randint(h,size=100)

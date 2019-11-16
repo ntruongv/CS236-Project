@@ -1,9 +1,22 @@
-from utils import load_vgg16, vgg_preprocess
+from vgg.utils import load_vgg16, vgg_preprocess
 from torch import nn
+from torchvision import transforms
 import torch.nn.functional as F
+import torch
+import os
+import math
+import torchvision.utils as vutils
+import yaml
+import numpy as np
+import torch.nn.init as init
+import time
+import itertools
+from PIL import Image
 
-class LocalGraph:
+
+class LocalGraph(nn.Module):
     def __init__(self, image, cell_h=32, cell_gap=16, hidden_dim=256, out_dim=10):
+        super(LocalGraph,self).__init__()
         self.vgg = load_vgg16('models')
         self.vgg.eval()
         for param in self.vgg.parameters():
@@ -15,16 +28,19 @@ class LocalGraph:
         self.image_w = width
         self.cell_h = cell_h
         self.cell_gap = cell_gap
-        self.out_h = self.cell_h/8
-        self.fcn_1 = nn.Linear(256*self.out_h*self.out_h, hidden_dim)
+        self.out_dim = int(256*self.cell_h/8*self.cell_h/8)
+        self.fcn_1 = nn.Linear(self.out_dim, hidden_dim)
         self.fcn_2 = nn.Linear(hidden_dim, out_dim)
 
     def points_to_crop(self, pts):
+        print("Start cropping")
         feat = [self.trns(self.image.crop((x[0]-self.cell_h/2, x[1]-self.cell_h/2, x[0]+self.cell_h/2, x[1]+self.cell_h/2))) for x in pts]
+        print("Done cropping")
         feat = torch.stack(feat).cuda()
         feat = vgg_preprocess(feat)
         feat = self.vgg(feat)
-        feat = F.relu(self.fcn_1(feat), inplace=True)
+        print(feat.shape)
+        feat = F.relu(self.fcn_1(feat.view(-1,self.out_dim)), inplace=True)
         feat = F.relu(self.fcn_2(feat), inplace=True)
         return feat
 
@@ -81,8 +97,8 @@ class LocalGraph:
             g_cells.extend(cells)
             g_valid.extend(valid)
         feat = self.points_to_crop(g_cells)
-        _, c, h, w = feat.size()
-        fin_feat = torch.zeros((len(g_valid), c, h, w))
+        _, dim_f = feat.size()
+        fin_feat = torch.zeros((len(g_valid), dim_f))
         # fin_feat[g_valid] = feat
         count = 0
         for i, g_bool in enumerate(g_valid):
