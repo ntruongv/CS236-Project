@@ -3,7 +3,7 @@ from torch import nn
 import torch.nn.functional as F
 
 class LocalGraph:
-    def __init__(self, image, cell_h=32, cell_gap=16, hidden_dim=256, out_dim=50):
+    def __init__(self, image, cell_h=32, cell_gap=16, hidden_dim=256, out_dim=10):
         self.vgg = load_vgg16('models')
         self.vgg.eval()
         for param in self.vgg.parameters():
@@ -21,7 +21,7 @@ class LocalGraph:
 
     def points_to_crop(self, pts):
         feat = [self.trns(self.image.crop((x[0]-self.cell_h/2, x[1]-self.cell_h/2, x[0]+self.cell_h/2, x[1]+self.cell_h/2))) for x in pts]
-        feat = torch.stack(feat)
+        feat = torch.stack(feat).cuda()
         feat = vgg_preprocess(feat)
         feat = self.vgg(feat)
         feat = F.relu(self.fcn_1(feat), inplace=True)
@@ -83,7 +83,13 @@ class LocalGraph:
         feat = self.points_to_crop(g_cells)
         _, c, h, w = feat.size()
         fin_feat = torch.zeros((len(g_valid), c, h, w))
-        fin_feat[g_valid] = feat
+        # fin_feat[g_valid] = feat
+        count = 0
+        for i, g_bool in enumerate(g_valid):
+            if(g_bool):
+                fin_feat[i] = feat[count]
+                count +=1
+        
         return fin_feat.view(n_batch, -1)#, c, h, w)
         
 
