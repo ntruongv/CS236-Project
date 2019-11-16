@@ -33,13 +33,13 @@ class LocalGraph(nn.Module):
         self.fcn_2 = nn.Linear(hidden_dim, out_dim)
 
     def points_to_crop(self, pts):
-        print("Start cropping")
+        # print("Start cropping")
         feat = [self.trns(self.image.crop((x[0]-self.cell_h/2, x[1]-self.cell_h/2, x[0]+self.cell_h/2, x[1]+self.cell_h/2))) for x in pts]
-        print("Done cropping")
+        # print("Done cropping")
         feat = torch.stack(feat).cuda()
         feat = vgg_preprocess(feat)
         feat = self.vgg(feat)
-        print(feat.shape)
+        # print(feat.shape)
         feat = F.relu(self.fcn_1(feat.view(-1,self.out_dim)), inplace=True)
         feat = F.relu(self.fcn_2(feat), inplace=True)
         return feat

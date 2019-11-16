@@ -13,4 +13,4 @@ pts = np.zeros((100,2))
 pts[:,1] = np.random.randint(h,size=100)
 pts[:,0] = np.random.randint(w,size=100)
 print(pts.shape)
-print(lgph.extract_batch(pts).shape)
+print(lgph.extract_batch(pts).shape) # (batch X 90) 10 per neighbor cell
