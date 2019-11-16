@@ -1,4 +1,4 @@
-from utils import LocalGraph
+from lclgph import LocalGraph
 from PIL import Image
 import numpy as np
 
@@ -6,7 +6,7 @@ import numpy as np
 
 img = Image.open("frame_1.png")
 h,w = img.size
-lgph = LocalGraph(img, cell_h=24, cell_gap=16)
+lgph = LocalGraph(img)
 # pass batch of (x,y) for local features
 pts = np.zeros((100,2))
 pts[:,1] = np.random.randint(h,size=100)
