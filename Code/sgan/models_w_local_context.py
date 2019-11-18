@@ -7,7 +7,8 @@ codepath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(codepath)
 sys.path.append(os.path.join(codepath, "models"))
 import pix2met.pix2met_zara as pix2met_zara# NHI: script to generate local data
-from vgg.utils import vgg_preprocess, load_vgg16, LocalGraph # NHI: add vgg utils 
+from vgg.utils import vgg_preprocess, load_vgg16 # NHI: add vgg utils 
+from vgg.lclgph import LocalGraph # NHI: add vgg utils 
 
 
 def make_mlp(dim_list, activation='relu', batch_norm=True, dropout=0):

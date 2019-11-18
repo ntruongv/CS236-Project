@@ -22,7 +22,8 @@ from sgan.utils import int_tuple, bool_flag, get_total_norm
 from sgan.utils import relative_to_abs, get_dset_path
 
 import pix2met.pix2met_zara as pix2met_zara # NHI: script to generate local data
-from vgg.utils import vgg_preprocess, load_vgg16, LocalGraph # NHI: add vgg utils 
+from vgg.utils import vgg_preprocess, load_vgg16 # NHI: add vgg utils 
+from vgg.lclgph import LocalGraph # NHI: add vgg utils 
 from PIL import Image
 
 torch.backends.cudnn.benchmark = True
