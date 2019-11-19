@@ -98,7 +98,7 @@ class LocalGraph(nn.Module):
             g_valid.extend(valid)
         feat = self.points_to_crop(g_cells)
         _, dim_f = feat.size()
-        fin_feat = torch.zeros((len(g_valid), dim_f))
+        fin_feat = torch.zeros((len(g_valid), dim_f)).cuda()
         # fin_feat[g_valid] = feat
         count = 0
         for i, g_bool in enumerate(g_valid):

@@ -159,7 +159,7 @@ def main(args):
     #processed_local_info = pix2met_zara.all_local_info(neigh_size = args.local_neigh_size)  #NHI: process local info now  
     filepath = os.path.join(codepath, "vgg", "frame_1.png")
     img = Image.open(filepath) #NHI: graph local info
-    processed_local_info = LocalGraph(img)
+    processed_local_info = LocalGraph(img).cuda()
 
     generator.apply(init_weights)
     generator.type(float_dtype).train()
