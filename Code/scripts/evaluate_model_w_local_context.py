@@ -6,7 +6,7 @@ import sys
 from attrdict import AttrDict
 
 from sgan.data.loader import data_loader
-from sgan.models import TrajectoryGenerator
+from sgan.models_w_local_context import TrajectoryGenerator
 from sgan.losses import displacement_error, final_displacement_error
 from sgan.utils import relative_to_abs, get_dset_path
 
@@ -14,14 +14,15 @@ from pix2met import pix2met_zara
 
 codepath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(codepath)
-from vgg.utils import vgg_preprocess, load_vgg16, LocalGraph # NHI: add vgg utils 
+from vgg.utils import vgg_preprocess, load_vgg16 # NHI: add vgg utils 
+from vgg.lclgph import LocalGraph # NHI: add vgg utils 
 from PIL import Image
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--model_path', type=str)
 parser.add_argument('--num_samples', default=20, type=int)
 parser.add_argument('--dset_type', default='test', type=str)
-parser.add_argument('--local_neigh_size', default = 1, type =int) #NHI: local info neighbor size
+parser.add_argument('--local_neigh_size', default=1, type=int) #NHI: local info neighbor size
 
 def get_generator(checkpoint):
     args = AttrDict(checkpoint['args'])
@@ -43,7 +44,7 @@ def get_generator(checkpoint):
         neighborhood_size=args.neighborhood_size,
         grid_size=args.grid_size,
         batch_norm=args.batch_norm,
-        local_neigh_size = args.local_neigh_size) # NHI: local neighbor size default is 1 
+        local_neigh_size=args.local_neigh_size) # NHI: local neighbor size default is 1 
     generator.load_state_dict(checkpoint['g_state'])
     generator.cuda()
     generator.train()
@@ -102,8 +103,9 @@ def evaluate(args, loader, generator, num_samples, processed_local_info): #NHI: 
 
 def main(args):
     #processed_local_info = pix2met_zara.all_local_info(neigh_size = args.local_neigh_size)  #NHI: process local info now
-    img = Image.open("frame_1.png") #NHI: graph local info
-    processed_local_info = LocalGraph(img)
+    filepath = os.path.join(codepath, "vgg", "frame_1.png")
+    img = Image.open(filepath) #NHI: graph local info
+    processed_local_info = LocalGraph(img).cuda()
 
     if os.path.isdir(args.model_path):
         filenames = os.listdir(args.model_path)
