@@ -3,3 +3,8 @@
 .vscode
 proj.code-workspace
 /Code/vgg/models
+/Code/LICENSE
+/Code/MODEL_ZOO.md
+/Code/README.md
+/Code/TRAINING.md
+/Code/requirements.txt
