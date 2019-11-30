@@ -1,0 +1,88 @@
+[INFO: train_w_local_context.py:  123]: Initializing train dataset
+[INFO: train_w_local_context.py:  125]: Initializing val dataset
+[INFO: train_w_local_context.py:  133]: There are 5.84375 iterations per epoch
+[INFO: train_w_local_context.py:  160]: Here is the generator:
+[INFO: train_w_local_context.py:  161]: TrajectoryGenerator(
+  (encoder): Encoder(
+    (encoder): LSTM(64, 64)
+    (spatial_embedding): Linear(in_features=2, out_features=64, bias=True)
+  )
+  (decoder): Decoder(
+    (decoder): LSTM(64, 128)
+    (pool_net): PoolHiddenNet(
+      (spatial_embedding): Linear(in_features=2, out_features=64, bias=True)
+      (mlp_pre_pool): Sequential(
+        (0): Linear(in_features=192, out_features=512, bias=True)
+        (1): ReLU()
+        (2): Linear(in_features=512, out_features=1024, bias=True)
+        (3): ReLU()
+      )
+    )
+    (mlp): Sequential(
+      (0): Linear(in_features=1152, out_features=1024, bias=True)
+      (1): ReLU()
+      (2): Linear(in_features=1024, out_features=128, bias=True)
+      (3): ReLU()
+    )
+    (spatial_embedding): Linear(in_features=2, out_features=64, bias=True)
+    (hidden2pos): Linear(in_features=128, out_features=2, bias=True)
+  )
+  (pool_net): PoolHiddenNet(
+    (spatial_embedding): Linear(in_features=2, out_features=64, bias=True)
+    (mlp_pre_pool): Sequential(
+      (0): Linear(in_features=128, out_features=512, bias=True)
+      (1): ReLU()
+      (2): Linear(in_features=512, out_features=1024, bias=True)
+      (3): ReLU()
+    )
+  )
+  (mlp_decoder_context): Sequential(
+    (0): Linear(in_features=1097, out_features=1024, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=1024, out_features=128, bias=True)
+    (3): ReLU()
+  )
+)
+[INFO: train_w_local_context.py:  176]: Here is the discriminator:
+[INFO: train_w_local_context.py:  177]: TrajectoryDiscriminator(
+  (encoder): Encoder(
+    (encoder): LSTM(64, 64)
+    (spatial_embedding): Linear(in_features=2, out_features=64, bias=True)
+  )
+  (real_classifier): Sequential(
+    (0): Linear(in_features=64, out_features=1024, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=1024, out_features=1, bias=True)
+    (3): ReLU()
+  )
+)
+[INFO: train_w_local_context.py:  240]: Starting epoch 1
+[INFO: train_w_local_context.py:  285]: t = 1 / 1168
+[INFO: train_w_local_context.py:  287]:   [D] D_data_loss: 1.360
+[INFO: train_w_local_context.py:  287]:   [D] D_total_loss: 1.360
+[INFO: train_w_local_context.py:  290]:   [G] G_discriminator_loss: 0.684
+[INFO: train_w_local_context.py:  290]:   [G] G_l2_loss_rel: 18.690
+[INFO: train_w_local_context.py:  290]:   [G] G_total_loss: 19.373
+[INFO: train_w_local_context.py:  240]: Starting epoch 2
+[INFO: train_w_local_context.py:  285]: t = 6 / 1168
+[INFO: train_w_local_context.py:  287]:   [D] D_data_loss: 1.379
+[INFO: train_w_local_context.py:  287]:   [D] D_total_loss: 1.379
+[INFO: train_w_local_context.py:  290]:   [G] G_discriminator_loss: 0.683
+[INFO: train_w_local_context.py:  290]:   [G] G_l2_loss_rel: 10.646
+[INFO: train_w_local_context.py:  290]:   [G] G_total_loss: 11.329
+[INFO: train_w_local_context.py:  240]: Starting epoch 3
+[INFO: train_w_local_context.py:  285]: t = 11 / 1168
+[INFO: train_w_local_context.py:  287]:   [D] D_data_loss: 1.351
+[INFO: train_w_local_context.py:  287]:   [D] D_total_loss: 1.351
+[INFO: train_w_local_context.py:  290]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  290]:   [G] G_l2_loss_rel: 9.939
+[INFO: train_w_local_context.py:  290]:   [G] G_total_loss: 10.632
+[INFO: train_w_local_context.py:  240]: Starting epoch 4
+[INFO: train_w_local_context.py:  285]: t = 16 / 1168
+[INFO: train_w_local_context.py:  287]:   [D] D_data_loss: 1.324
+[INFO: train_w_local_context.py:  287]:   [D] D_total_loss: 1.324
+[INFO: train_w_local_context.py:  290]:   [G] G_discriminator_loss: 0.687
+[INFO: train_w_local_context.py:  290]:   [G] G_l2_loss_rel: 6.291
+[INFO: train_w_local_context.py:  290]:   [G] G_total_loss: 6.979
+[INFO: train_w_local_context.py:  240]: Starting epoch 5
+[INFO: train_w_local_context.py:  240]: Starting epoch 6
