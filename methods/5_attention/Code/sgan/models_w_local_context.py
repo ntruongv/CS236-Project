@@ -441,7 +441,7 @@ class TrajectoryGenerator(nn.Module):
 
         # Decoder Hidden
         if pooling_type:
-            input_dim = encoder_h_dim + bottleneck_dim + 41472 #(2*local_neigh_size+1)**2  #NHI: when pooling also add local info  NOW GRAPH WARNING HARD CODE
+            input_dim = encoder_h_dim + bottleneck_dim + 90 #(2*local_neigh_size+1)**2  #NHI: when pooling also add local info  NOW GRAPH WARNING HARD CODE
         else:
             input_dim = encoder_h_dim
 

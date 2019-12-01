@@ -1,0 +1,117 @@
+[INFO: train_w_local_context.py:  126]: Initializing train dataset
+[INFO: train_w_local_context.py:  128]: Initializing val dataset
+[INFO: train_w_local_context.py:  136]: There are 5.84375 iterations per epoch
+[INFO: train_w_local_context.py:  166]: Here is the generator:
+[INFO: train_w_local_context.py:  167]: TrajectoryGenerator(
+  (encoder): Encoder(
+    (encoder): LSTM(64, 64)
+    (spatial_embedding): Linear(in_features=2, out_features=64, bias=True)
+  )
+  (decoder): Decoder(
+    (decoder): LSTM(64, 128)
+    (pool_net): PoolHiddenNet(
+      (spatial_embedding): Linear(in_features=2, out_features=64, bias=True)
+      (mlp_pre_pool): Sequential(
+        (0): Linear(in_features=192, out_features=512, bias=True)
+        (1): ReLU()
+        (2): Linear(in_features=512, out_features=1024, bias=True)
+        (3): ReLU()
+      )
+    )
+    (mlp): Sequential(
+      (0): Linear(in_features=1152, out_features=1024, bias=True)
+      (1): ReLU()
+      (2): Linear(in_features=1024, out_features=128, bias=True)
+      (3): ReLU()
+    )
+    (spatial_embedding): Linear(in_features=2, out_features=64, bias=True)
+    (hidden2pos): Linear(in_features=128, out_features=2, bias=True)
+  )
+  (pool_net): PoolHiddenNet(
+    (spatial_embedding): Linear(in_features=2, out_features=64, bias=True)
+    (mlp_pre_pool): Sequential(
+      (0): Linear(in_features=128, out_features=512, bias=True)
+      (1): ReLU()
+      (2): Linear(in_features=512, out_features=1024, bias=True)
+      (3): ReLU()
+    )
+  )
+  (mlp_decoder_context): Sequential(
+    (0): Linear(in_features=1178, out_features=1024, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=1024, out_features=128, bias=True)
+    (3): ReLU()
+  )
+)
+[INFO: train_w_local_context.py:  182]: Here is the discriminator:
+[INFO: train_w_local_context.py:  183]: TrajectoryDiscriminator(
+  (encoder): Encoder(
+    (encoder): LSTM(64, 64)
+    (spatial_embedding): Linear(in_features=2, out_features=64, bias=True)
+  )
+  (real_classifier): Sequential(
+    (0): Linear(in_features=64, out_features=1024, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=1024, out_features=1, bias=True)
+    (3): ReLU()
+  )
+)
+[INFO: train_w_local_context.py:  246]: Starting epoch 1
+[INFO: train_w_local_context.py:  291]: t = 1 / 1168
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 20.507
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 21.200
+[INFO: train_w_local_context.py:  246]: Starting epoch 2
+[INFO: train_w_local_context.py:  291]: t = 6 / 1168
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 9.574
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 10.267
+[INFO: train_w_local_context.py:  246]: Starting epoch 3
+[INFO: train_w_local_context.py:  291]: t = 11 / 1168
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 8.649
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 9.342
+[INFO: train_w_local_context.py:  246]: Starting epoch 4
+[INFO: train_w_local_context.py:  291]: t = 16 / 1168
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 5.830
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 6.523
+[INFO: train_w_local_context.py:  246]: Starting epoch 5
+[INFO: train_w_local_context.py:  246]: Starting epoch 6
+[INFO: train_w_local_context.py:  291]: t = 21 / 1168
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 6.520
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 7.213
+[INFO: train_w_local_context.py:  246]: Starting epoch 7
+[INFO: train_w_local_context.py:  291]: t = 26 / 1168
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 7.681
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 8.374
+[INFO: train_w_local_context.py:  246]: Starting epoch 8
+[INFO: train_w_local_context.py:  291]: t = 31 / 1168
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 6.392
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 7.085
+[INFO: train_w_local_context.py:  246]: Starting epoch 9
+[INFO: train_w_local_context.py:  291]: t = 36 / 1168
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 4.078
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 4.771
+[INFO: train_w_local_context.py:  246]: Starting epoch 10
+[INFO: train_w_local_context.py:  246]: Starting epoch 11

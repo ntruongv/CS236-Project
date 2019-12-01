@@ -441,7 +441,7 @@ class TrajectoryGenerator(nn.Module):
 
         # Decoder Hidden
         if pooling_type:
-            input_dim = encoder_h_dim + bottleneck_dim + 41472 #(2*local_neigh_size+1)**2  #NHI: when pooling also add local info  NOW GRAPH WARNING HARD CODE
+            input_dim = encoder_h_dim + bottleneck_dim + 9 #(2*local_neigh_size+1)**2  #NHI: when pooling also add local info  NOW GRAPH WARNING HARD CODE
         else:
             input_dim = encoder_h_dim
 
@@ -449,7 +449,7 @@ class TrajectoryGenerator(nn.Module):
             mlp_decoder_context_dims = [
                 input_dim, mlp_dim, decoder_h_dim - self.noise_first_dim
             ]
-
+            
             self.mlp_decoder_context = make_mlp(
                 mlp_decoder_context_dims,
                 activation=activation,
