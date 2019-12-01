@@ -441,6 +441,7 @@ class TrajectoryGenerator(nn.Module):
         # Decoder Hidden
         if pooling_type:
             input_dim = encoder_h_dim + bottleneck_dim + 41472 #(2*local_neigh_size+1)**2  #NHI: when pooling also add local info  NOW GRAPH WARNING HARD CODE
+            print(41472)
         else:
             input_dim = encoder_h_dim
 
@@ -525,6 +526,7 @@ class TrajectoryGenerator(nn.Module):
             # NHI: add graph context
             pix_end_pos = pix2met_zara.met2pix(end_pos)
             local_context = all_local_info.extract_batch(pix_end_pos.cpu().numpy())
+            print(local_context.shape)
             #
             pool_h = self.pool_net(final_encoder_h, seq_start_end, end_pos)
             # Construct input hidden states for decoder

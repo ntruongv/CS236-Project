@@ -1,6 +1,7 @@
 import argparse
 import os
 import torch
+import matplotlib.pyplot as plt
 
 from attrdict import AttrDict
 
@@ -74,6 +75,7 @@ def evaluate(args, loader, generator, num_samples):
                 pred_traj_fake = relative_to_abs(
                     pred_traj_fake_rel, obs_traj[-1]
                 )
+                plot_traj(pred_traj_gt)
                 ade.append(displacement_error(
                     pred_traj_fake, pred_traj_gt, mode='raw'
                 ))
@@ -90,6 +92,14 @@ def evaluate(args, loader, generator, num_samples):
         fde = sum(fde_outer) / (total_traj)
         return ade, fde
 
+def plot_traj(traj):
+    trajectory = traj.cpu().numpy()
+    traj0 = trajectory[:, :, 0]
+    traj1 = trajectory[:, :, 1]
+    plt.scatter(traj0[:, 0], traj0[:, 1])
+    plt.scatter(traj1[:, 0], traj1[:, 1])
+    plt.savefig("temp.png")
+    sys.exit()
 
 def main(args):
     if os.path.isdir(args.model_path):

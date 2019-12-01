@@ -1,5 +1,5 @@
-/Code/datasets
-/Code/models
+Code/datasets
+Code/models
 .vscode
 proj.code-workspace
 /Code/vgg/models
@@ -8,3 +8,15 @@ proj.code-workspace
 /Code/README.md
 /Code/TRAINING.md
 /Code/requirements.txt
+methods/*/Code/sgan/data/__pycache__/*
+methods/*/Code/vgg/__pycache__/*
+methods/*/Code/pix2met/__pycache__/*
+methods/*/Code/datasets
+methods/*/Code/models
+methods/*/Code/vgg/models
+methods/*/Code/LICENSE
+methods/*/Code/MODEL_ZOO.md
+methods/*/Code/README.md
+methods/*/Code/TRAINING.md
+methods/*/Code/requirements.txt
+methods/*/checkpoints/*
