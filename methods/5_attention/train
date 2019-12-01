@@ -3,8 +3,10 @@
 [INFO: train_w_local_context.py:  136]: There are 5.84375 iterations per epoch
 [INFO: train_w_local_context.py:  166]: Here is the generator:
 [INFO: train_w_local_context.py:  167]: TrajectoryGenerator(
-  (encoder): Encoder(
-    (encoder): LSTM(64, 64)
+  (encoder): EncoderAtt(
+    (self_attention): MultiheadAttention(
+      (out_proj): Linear(in_features=64, out_features=64, bias=True)
+    )
     (spatial_embedding): Linear(in_features=2, out_features=64, bias=True)
   )
   (decoder): Decoder(
@@ -45,8 +47,10 @@
 )
 [INFO: train_w_local_context.py:  182]: Here is the discriminator:
 [INFO: train_w_local_context.py:  183]: TrajectoryDiscriminator(
-  (encoder): Encoder(
-    (encoder): LSTM(64, 64)
+  (encoder): EncoderAtt(
+    (self_attention): MultiheadAttention(
+      (out_proj): Linear(in_features=64, out_features=64, bias=True)
+    )
     (spatial_embedding): Linear(in_features=2, out_features=64, bias=True)
   )
   (real_classifier): Sequential(
@@ -57,3 +61,17 @@
   )
 )
 [INFO: train_w_local_context.py:  246]: Starting epoch 1
+[INFO: train_w_local_context.py:  291]: t = 1 / 1168
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.363
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.363
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.687
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 16.622
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 17.309
+[INFO: train_w_local_context.py:  246]: Starting epoch 2
+[INFO: train_w_local_context.py:  291]: t = 6 / 1168
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 10.631
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 11.324
+[INFO: train_w_local_context.py:  246]: Starting epoch 3
