@@ -20,3 +20,4 @@ methods/*/Code/README.md
 methods/*/Code/TRAINING.md
 methods/*/Code/requirements.txt
 methods/*/checkpoints/*
+methods/*/train
