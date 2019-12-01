@@ -307,3 +307,11 @@
 [INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.895
 [INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 1.588
 [INFO: train_w_local_context.py:  246]: Starting epoch 39
+[INFO: train_w_local_context.py:  291]: t = 156 / 1168
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.415
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 1.108
+[INFO: train_w_local_context.py:  246]: Starting epoch 40
+slurmstepd-icme01: error: *** JOB 957 ON icme01 CANCELLED AT 2019-12-01T00:49:51 ***
