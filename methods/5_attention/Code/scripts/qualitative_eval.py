@@ -80,14 +80,14 @@ def qualitative_eval(args, loader, generator, num_samples, processed_local_info,
             
             for person_id in range(mean_fake_traj.shape[1]):
                 input_traj_cpu = obs_traj[:,person_id,:].data.cpu()
-                input_traj_met = pix2met_zara.met2pix(input_traj_cpu)
+                input_traj_met = pix2met_zara.met2pix_cpu(input_traj_cpu)
                 mean_pred_traj_cpu = mean_fake_traj[:,person_id,:].data.cpu()
-                mean_pred_traj_met = pix2met_zara.met2pix(mean_pred_traj_cpu)
+                mean_pred_traj_met = pix2met_zara.met2pix_cpu(mean_pred_traj_cpu)
                 std_fake_traj_cpu = std_fake_traj[:,person_id,:].data.cpu()
                 top_traj = mean_pred_traj_cpu + std_fake_traj_cpu
-                top_traj_met = pix2met_zara.met2pix(top_traj)
+                top_traj_met = pix2met_zara.met2pix_cpu(top_traj)
                 bot_traj = mean_pred_traj_cpu - std_fake_traj_cpu
-                bot_traj_met = pix2met_zara.met2pix(bot_traj)
+                bot_traj_met = pix2met_zara.met2pix_cpu(bot_traj)
                 plt.imshow(img)
                 plt.scatter(input_traj_met[:,0], input_traj_met[:,1], c='b')
                 plt.scatter(mean_pred_traj_met[:,0], mean_pred_traj_met[:,1], c='r')

@@ -29,6 +29,18 @@ def met2pix(met_arr):
        pix_loc = pix_loc_z/(pix_loc_z[:,-1].reshape(-1,1))
        return pix_loc[:,:2]
 
+def met2pix_cpu(met_arr):
+       """
+       input: met_array: shape (N, 2), each row is (x,y) meter location
+       output: pix_array: shape (N, 2), each row is (x,y) pixel location
+       """
+       hom_mat = torch.tensor([[0.02104651, 0, 0], [0, -0.0236598, 13.74680446], [0, 0, 1]], device="cpu")
+       inv_mat = hom_mat.inverse()
+       met_arr_z = torch.cat((met_arr, torch.zeros((met_arr.shape[0],1), device="cpu")+1), dim=1)
+       pix_loc_z = met_arr_z.mm(inv_mat.transpose(0, 1))
+       pix_loc = pix_loc_z/(pix_loc_z[:,-1].reshape(-1,1))
+       return pix_loc[:,:2]
+
 
 def all_local_info(global_info=zara_glob_info, neigh_size = 1):
        """
