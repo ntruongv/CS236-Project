@@ -5,16 +5,17 @@ import sys
 
 from attrdict import AttrDict
 
+codepath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(codepath)
+
 from sgan.data.loader import data_loader
-from sgan.models import TrajectoryGenerator
+from sgan.models_w_local_context import TrajectoryGenerator
 from sgan.losses import displacement_error, final_displacement_error
 from sgan.utils import relative_to_abs, get_dset_path
 
-from pix2met import pix2met_zara
-
-codepath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.append(codepath)
-from vgg.utils import vgg_preprocess, load_vgg16, LocalGraph # NHI: add vgg utils 
+import pix2met.pix2met_zara as pix2met_zara # NHI: script to generate local data
+from vgg.utils import vgg_preprocess, load_vgg16 # NHI: add vgg utils 
+from vgg.lclgph import LocalGraph # NHI: add vgg utils 
 from PIL import Image
 
 parser = argparse.ArgumentParser()
@@ -101,21 +102,13 @@ def evaluate(args, loader, generator, num_samples, processed_local_info): #NHI: 
 
 
 def main(args):
-    #processed_local_info = pix2met_zara.all_local_info(neigh_size = args.local_neigh_size)  #NHI: process local info now
-    img = Image.open("frame_1.png") #NHI: graph local info
-    processed_local_info = LocalGraph(img)
+    filepath = os.path.join(codepath, "vgg", "frame_1.png")
+    img = Image.open(filepath) #NHI: graph local info
+    processed_local_info = LocalGraph(img).cuda()
 
     if os.path.isdir(args.model_path):
-        filenames = os.listdir(args.model_path)
-        filenames.sort()
-        paths = [
-            os.path.join(args.model_path, file_) for file_ in filenames
-        ]
-    else:
-        paths = [args.model_path]
-
-    for path in paths:
-        checkpoint = torch.load(path)
+        print(os.path.join(args.model_path, "checkpoint_with_model.pt"))
+        checkpoint = torch.load(os.path.join(args.model_path, "checkpoint_with_model.pt"))
         generator = get_generator(checkpoint)
         _args = AttrDict(checkpoint['args'])
         path = get_dset_path(_args.dataset_name, args.dset_type)

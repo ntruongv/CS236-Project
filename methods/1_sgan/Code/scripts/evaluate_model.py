@@ -93,16 +93,7 @@ def evaluate(args, loader, generator, num_samples):
 
 def main(args):
     if os.path.isdir(args.model_path):
-        filenames = os.listdir(args.model_path)
-        filenames.sort()
-        paths = [
-            os.path.join(args.model_path, file_) for file_ in filenames
-        ]
-    else:
-        paths = [args.model_path]
-
-    for path in paths:
-        checkpoint = torch.load(path)
+        checkpoint = torch.load(os.path.join(args.model_path, "checkpoint_with_model.pt"))
         generator = get_generator(checkpoint)
         _args = AttrDict(checkpoint['args'])
         path = get_dset_path(_args.dataset_name, args.dset_type)
