@@ -87,7 +87,6 @@ def qualitative_eval(args, loader, generator, num_samples, processed_local_info,
                 plt.scatter(top_traj[:,0], top_traj[:,1], c='g')
                 plt.scatter(bot_traj[:,0], bot_traj[:,1], c='g')
                 plt.savefig(save_path + 'person_id.png')
-
             return None
 
 
