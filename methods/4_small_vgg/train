@@ -1,1 +1,91 @@
 [INFO: train_w_local_context.py:  126]: Initializing train dataset
+[INFO: train_w_local_context.py:  128]: Initializing val dataset
+[INFO: train_w_local_context.py:  136]: There are 5.84375 iterations per epoch
+[INFO: train_w_local_context.py:  166]: Here is the generator:
+[INFO: train_w_local_context.py:  167]: TrajectoryGenerator(
+  (encoder): Encoder(
+    (encoder): LSTM(64, 64)
+    (spatial_embedding): Linear(in_features=2, out_features=64, bias=True)
+  )
+  (decoder): Decoder(
+    (decoder): LSTM(64, 128)
+    (pool_net): PoolHiddenNet(
+      (spatial_embedding): Linear(in_features=2, out_features=64, bias=True)
+      (mlp_pre_pool): Sequential(
+        (0): Linear(in_features=192, out_features=512, bias=True)
+        (1): ReLU()
+        (2): Linear(in_features=512, out_features=1024, bias=True)
+        (3): ReLU()
+      )
+    )
+    (mlp): Sequential(
+      (0): Linear(in_features=1152, out_features=1024, bias=True)
+      (1): ReLU()
+      (2): Linear(in_features=1024, out_features=128, bias=True)
+      (3): ReLU()
+    )
+    (spatial_embedding): Linear(in_features=2, out_features=64, bias=True)
+    (hidden2pos): Linear(in_features=128, out_features=2, bias=True)
+  )
+  (pool_net): PoolHiddenNet(
+    (spatial_embedding): Linear(in_features=2, out_features=64, bias=True)
+    (mlp_pre_pool): Sequential(
+      (0): Linear(in_features=128, out_features=512, bias=True)
+      (1): ReLU()
+      (2): Linear(in_features=512, out_features=1024, bias=True)
+      (3): ReLU()
+    )
+  )
+  (mlp_decoder_context): Sequential(
+    (0): Linear(in_features=1178, out_features=1024, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=1024, out_features=128, bias=True)
+    (3): ReLU()
+  )
+)
+[INFO: train_w_local_context.py:  182]: Here is the discriminator:
+[INFO: train_w_local_context.py:  183]: TrajectoryDiscriminator(
+  (encoder): Encoder(
+    (encoder): LSTM(64, 64)
+    (spatial_embedding): Linear(in_features=2, out_features=64, bias=True)
+  )
+  (real_classifier): Sequential(
+    (0): Linear(in_features=64, out_features=1024, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=1024, out_features=1, bias=True)
+    (3): ReLU()
+  )
+)
+[INFO: train_w_local_context.py:  202]: Restoring from checkpoint ../checkpoints/checkpoint_with_model.pt
+[INFO: train_w_local_context.py:  246]: Starting epoch 229
+[INFO: train_w_local_context.py:  291]: t = 901 / 1168
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.371
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.371
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.685
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 2.384
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 3.069
+[INFO: train_w_local_context.py:  307]: Checking stats on val ...
+[INFO: train_w_local_context.py:  311]: Checking stats on train ...
+[INFO: train_w_local_context.py:  318]:   [val] ade: 3.410
+[INFO: train_w_local_context.py:  318]:   [val] ade_l: 5.021
+[INFO: train_w_local_context.py:  318]:   [val] ade_nl: 10.625
+[INFO: train_w_local_context.py:  318]:   [val] d_loss: 1.346
+[INFO: train_w_local_context.py:  318]:   [val] fde: 6.170
+[INFO: train_w_local_context.py:  318]:   [val] fde_l: 9.086
+[INFO: train_w_local_context.py:  318]:   [val] fde_nl: 19.228
+[INFO: train_w_local_context.py:  318]:   [val] g_l2_loss_abs: 4.952
+[INFO: train_w_local_context.py:  318]:   [val] g_l2_loss_rel: 4.952
+[INFO: train_w_local_context.py:  321]:   [train] ade: 2.861
+[INFO: train_w_local_context.py:  321]:   [train] ade_l: 4.302
+[INFO: train_w_local_context.py:  321]:   [train] ade_nl: 8.543
+[INFO: train_w_local_context.py:  321]:   [train] d_loss: 1.389
+[INFO: train_w_local_context.py:  321]:   [train] fde: 5.168
+[INFO: train_w_local_context.py:  321]:   [train] fde_l: 7.771
+[INFO: train_w_local_context.py:  321]:   [train] fde_nl: 15.431
+[INFO: train_w_local_context.py:  321]:   [train] g_l2_loss_abs: 3.606
+[INFO: train_w_local_context.py:  321]:   [train] g_l2_loss_rel: 3.606
+[INFO: train_w_local_context.py:  348]: Saving checkpoint to ../checkpoints/checkpoint_with_model.pt
+[INFO: train_w_local_context.py:  350]: Done.
+[INFO: train_w_local_context.py:  356]: Saving checkpoint to ../checkpoints/checkpoint_no_model.pt
+[INFO: train_w_local_context.py:  367]: Done.
+slurmstepd-icme01: error: *** JOB 1006 ON icme01 CANCELLED AT 2019-12-02T19:51:54 ***

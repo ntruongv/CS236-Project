@@ -1,6 +1,14 @@
 Traceback (most recent call last):
   File "scripts/qualitative_eval.py", line 123, in <module>
     main(args)
+<<<<<<< Updated upstream
   File "scripts/qualitative_eval.py", line 118, in main
     _args.dataset_name, _args.pred_len, ade, fde))
 NameError: name 'ade' is not defined
+=======
+  File "scripts/qualitative_eval.py", line 116, in main
+    qualitative_eval(_args, loader, generator, args.num_samples, processed_local_info, img, save_path) #NHI
+  File "scripts/qualitative_eval.py", line 86, in qualitative_eval
+    std_fake_traj = std_fake_traj[:,person_id,:].data
+IndexError: too many indices for tensor of dimension 2
+>>>>>>> Stashed changes
