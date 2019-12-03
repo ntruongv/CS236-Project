@@ -1,0 +1,3 @@
+7_gen-lstm_dis_att
+../checkpoints/checkpoint_with_model.pt
+Dataset: crowds_zara, Pred Len: 8, ADE: 0.88, FDE: 1.56
