@@ -1,2 +1,5 @@
-../checkpoints/checkpoint_with_model.pt
-Dataset: crowds_zara, Pred Len: 8, ADE: 2.05, FDE: 3.55
+
+Traceback (most recent call last):
+  File "scripts/evaluate_model_w_local_context.py", line 3, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
