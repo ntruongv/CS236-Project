@@ -94,6 +94,7 @@ def qualitative_eval(args, loader, generator, num_samples, processed_local_info,
                 plt.scatter(top_traj_met[:,0], top_traj_met[:,1], c='g')
                 plt.scatter(bot_traj_met[:,0], bot_traj_met[:,1], c='g')
                 plt.savefig(os.path.join(save_path, str(person_id) + '.png'))
+                plt.close()
 
             return None
 
@@ -114,8 +115,6 @@ def main(args):
         path = get_dset_path(_args.dataset_name, args.dset_type)
         _, loader = data_loader(_args, path)
         qualitative_eval(_args, loader, generator, args.num_samples, processed_local_info, img, save_path) #NHI
-        print('Dataset: {}, Pred Len: {}, ADE: {:.2f}, FDE: {:.2f}'.format(
-            _args.dataset_name, _args.pred_len, ade, fde))
 
 
 if __name__ == '__main__':

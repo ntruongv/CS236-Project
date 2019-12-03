@@ -1,0 +1,2 @@
+../checkpoints/checkpoint_with_model.pt
+Dataset: crowds_zara, Pred Len: 8, ADE: 0.45, FDE: 0.84
