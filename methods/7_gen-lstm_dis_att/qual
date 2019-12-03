@@ -1,7 +1,0 @@
-5_attention
-Traceback (most recent call last):
-  File "scripts/qualitative_eval.py", line 124, in <module>
-    main(args)
-  File "scripts/qualitative_eval.py", line 119, in main
-    _args.dataset_name, _args.pred_len, ade, fde))
-NameError: name 'ade' is not defined
