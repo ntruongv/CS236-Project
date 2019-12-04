@@ -18,6 +18,7 @@ codepath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(codepath)
 
 from pix2met import pix2met_zara
+from PIL import Image
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--model_path', type=str)
@@ -50,7 +51,7 @@ def get_generator(checkpoint):
     return generator
 
 
-def qualitative_eval(args, loader, generator, num_samples, save_path):
+def qualitative_eval(args, loader, generator, num_samples, img, save_path):
     with torch.no_grad():
         for batch in loader:
             batch = [tensor.cuda() for tensor in batch]
@@ -83,11 +84,11 @@ def qualitative_eval(args, loader, generator, num_samples, save_path):
                 top_traj_met = pix2met_zara.met2pix_cpu(top_traj)
                 bot_traj = mean_pred_traj_cpu - std_fake_traj_cpu
                 bot_traj_met = pix2met_zara.met2pix_cpu(bot_traj)
-                #plt.imshow(img)
+                plt.imshow(img)
                 plt.scatter(input_traj_met[:,0], input_traj_met[:,1], c='b')
                 plt.scatter(mean_pred_traj_met[:,0], mean_pred_traj_met[:,1], c='r')
-                plt.scatter(top_traj_met[:,0], top_traj_met[:,1], c='g')
-                plt.scatter(bot_traj_met[:,0], bot_traj_met[:,1], c='g')
+                plt.scatter(top_traj_met[:,0], top_traj_met[:,1], c='r')
+                plt.scatter(bot_traj_met[:,0], bot_traj_met[:,1], c='r')
                 plt.savefig(os.path.join(save_path, str(person_id) + '.png'))
                 plt.close()
 
@@ -105,7 +106,9 @@ def main(args):
         _args = AttrDict(checkpoint['args'])
         path = get_dset_path(_args.dataset_name, args.dset_type)
         _, loader = data_loader(_args, path)
-        qualitative_eval(_args, loader, generator, args.num_samples, save_path) #NHI
+        filepath = os.path.join(codepath, "..", "..", "2_hand_label", "Code", "vgg", "frame_1.png")
+        img = Image.open(filepath)
+        qualitative_eval(_args, loader, generator, args.num_samples, img, save_path) #NHI
 
 
 if __name__ == '__main__':

@@ -1,0 +1,16 @@
+5_attention
+/home/dansj/CS236-Project/methods/5_attention/Code
+../checkpoints_lowweight/checkpoint_with_model.pt
+Traceback (most recent call last):
+  File "scripts/evaluate_model_w_local_context.py", line 125, in <module>
+    main(args)
+  File "scripts/evaluate_model_w_local_context.py", line 114, in main
+    generator = get_generator(checkpoint)
+  File "scripts/evaluate_model_w_local_context.py", line 49, in get_generator
+    generator.load_state_dict(checkpoint['g_state'])
+  File "/home/dansj/.conda/envs/5_attention/lib/python3.5/site-packages/torch/nn/modules/module.py", line 839, in load_state_dict
+    self.__class__.__name__, "\n\t".join(error_msgs)))
+RuntimeError: Error(s) in loading state_dict for TrajectoryGenerator:
+	Missing key(s) in state_dict: "encoder.self_attention.in_proj_weight", "encoder.self_attention.in_proj_bias", "encoder.self_attention.out_proj.weight", "encoder.self_attention.out_proj.bias". 
+	Unexpected key(s) in state_dict: "encoder.encoder.weight_ih_l0", "encoder.encoder.weight_hh_l0", "encoder.encoder.bias_ih_l0", "encoder.encoder.bias_hh_l0". 
+	size mismatch for mlp_decoder_context.0.weight: copying a param with shape torch.Size([1024, 1088]) from checkpoint, the shape in current model is torch.Size([1024, 1178]).

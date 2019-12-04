@@ -1,0 +1,3 @@
+9_attention_vgg5
+../checkpoints/checkpoint_with_model.pt
+Dataset: crowds_zara, Pred Len: 8, ADE: 0.51, FDE: 0.95

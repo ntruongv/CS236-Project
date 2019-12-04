@@ -1,3 +1,4 @@
 5_attention
+/home/dansj/CS236-Project/methods/5_attention/Code
 ../checkpoints/checkpoint_with_model.pt
-Dataset: crowds_zara, Pred Len: 8, ADE: 0.50, FDE: 0.93
+Dataset: crowds_zara, Pred Len: 8, ADE: 0.48, FDE: 0.91

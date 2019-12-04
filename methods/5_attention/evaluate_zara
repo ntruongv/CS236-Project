@@ -1,0 +1,4 @@
+5_attention
+/home/dansj/CS236-Project/methods/5_attention/Code
+../checkpoints_zara/checkpoint_with_model.pt
+slurmstepd-icme05: error: *** JOB 1163 ON icme05 CANCELLED AT 2019-12-04T19:06:22 ***

@@ -104,7 +104,7 @@ def evaluate(args, loader, generator, num_samples, processed_local_info): #NHI: 
 def main(args):
     filepath = os.path.join(codepath, "vgg", "frame_1.png")
     img = Image.open(filepath) #NHI: graph local info
-    processed_local_info = LocalGraph(img).cuda()
+    processed_local_info = LocalGraph(img, out_dim=5).cuda()
 
     if os.path.isdir(args.model_path):
         print(os.path.join(args.model_path, "checkpoint_with_model.pt"))

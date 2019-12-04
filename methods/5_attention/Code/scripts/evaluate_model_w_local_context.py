@@ -7,6 +7,7 @@ from attrdict import AttrDict
 
 codepath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(codepath)
+print(codepath)
 
 from sgan.data.loader import data_loader
 from sgan.models_w_local_context import TrajectoryGenerator
@@ -44,7 +45,7 @@ def get_generator(checkpoint):
         neighborhood_size=args.neighborhood_size,
         grid_size=args.grid_size,
         batch_norm=args.batch_norm,
-        local_neigh_size = args.local_neigh_size) # NHI: local neighbor size default is 1 
+        local_neigh_size=1) # NHI: local neighbor size default is 1 
     generator.load_state_dict(checkpoint['g_state'])
     generator.cuda()
     generator.train()
