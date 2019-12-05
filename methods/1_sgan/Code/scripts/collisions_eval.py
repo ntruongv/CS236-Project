@@ -95,7 +95,7 @@ def qualitative_eval(args, loader, generator, num_samples, img, save_path, globa
                             plt.scatter(j, k, c='g')
                 """
                 for k in range(mean_pred_traj_met[:, 0].shape[0]):
-                    if(global_info[int(min(mean_pred_traj_met[k, 1], y_max)/float(y_max) * 16), int(min(mean_pred_traj_met[k, 0], x_max)/float(x_max) * 20)] == 1):
+                    if(global_info[int(min(mean_pred_traj_met[k, 1], y_max-.001)/float(y_max) * 16), int(min(mean_pred_traj_met[k, 0], x_max-.001)/float(x_max) * 20)] == 1):
                         collision = True
                         break
                         

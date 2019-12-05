@@ -100,7 +100,7 @@ def qualitative_eval(args, loader, generator, num_samples, processed_local_info,
                     print(mean_pred_traj_met[k, 1], mean_pred_traj_met[k, 0])
                     print(int(mean_pred_traj_met[k, 1]/float(y_max) * 16), int(mean_pred_traj_met[k, 0]/float(x_max) * 20))
                     print("")
-                    if(global_info[int(min(mean_pred_traj_met[k, 1], y_max)/float(y_max) * 16), int(min(mean_pred_traj_met[k, 0], x_max)/float(x_max) * 20)] == 1):
+                    if(global_info[int(min(mean_pred_traj_met[k, 1], y_max-.001)/float(y_max) * 16), int(min(mean_pred_traj_met[k, 0], x_max-.001)/float(x_max) * 20)] == 1):
                         collision = True
                         break
                         
