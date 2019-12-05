@@ -55,6 +55,8 @@ def get_generator(checkpoint):
 
 def qualitative_eval(args, loader, generator, num_samples, processed_local_info, img, save_path, global_info):
     with torch.no_grad():
+        total_count = 0
+        col_count = 0
         for i, batch in enumerate(loader):
             batch = [tensor.cuda() for tensor in batch]
             (obs_traj, pred_traj_gt, obs_traj_rel, pred_traj_gt_rel,
@@ -97,12 +99,13 @@ def qualitative_eval(args, loader, generator, num_samples, processed_local_info,
                             plt.scatter(j, k, c='g')
                 """
                 for k in range(mean_pred_traj_met[:, 0].shape[0]):
+                    total_count += 1
                     print(mean_pred_traj_met[k, 1], mean_pred_traj_met[k, 0])
-                    print(int(mean_pred_traj_met[k, 1]/float(y_max) * 16), int(mean_pred_traj_met[k, 0]/float(x_max) * 20))
+                    print(int(mean_pred_traj_met[k, 1]), int(mean_pred_traj_met[k, 0]))
                     print("")
-                    if(global_info[int(min(mean_pred_traj_met[k, 1], y_max-.001)/float(y_max) * 16), int(min(mean_pred_traj_met[k, 0], x_max-.001)/float(x_max) * 20)] == 1):
+                    if(global_info[int(min(mean_pred_traj_met[k, 1], y_max-.001)), int(min(mean_pred_traj_met[k, 0], x_max-.001))] == 0):
                         collision = True
-                        break
+                        col_count += 1
                         
                 if(collision):
                     plt.savefig(os.path.join(save_path, "col_" + str(i) + "_" + str(person_id) + '.png'))
@@ -110,6 +113,7 @@ def qualitative_eval(args, loader, generator, num_samples, processed_local_info,
                     plt.savefig(os.path.join(save_path, "nocol_" + str(i) + "_" + str(person_id) + '.png'))
                 plt.close()
 
+        print("collisions: " + str(col_count) + "/" + str(total_count))
         return None
 
 
