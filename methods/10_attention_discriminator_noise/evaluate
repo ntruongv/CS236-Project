@@ -1,0 +1,4 @@
+10_attention_discriminator_noise
+/home/dansj/CS236-Project/methods/10_attention_discriminator_noise/Code
+../checkpoints/checkpoint_with_model.pt
+Dataset: crowds_zara, Pred Len: 8, ADE: 0.60, FDE: 1.07

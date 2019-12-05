@@ -22,3 +22,4 @@ methods/*/Code/requirements.txt
 methods/*/checkpoints*/*
 methods/*/train
 methods/*/qualitative_results/*
+methods/*/col_results/*

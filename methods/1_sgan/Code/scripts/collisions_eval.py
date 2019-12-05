@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from attrdict import AttrDict
 
 from sgan.data.loader import data_loader
-from sgan.models_w_local_context import TrajectoryGenerator
+from sgan.models import TrajectoryGenerator
 from sgan.losses import displacement_error, final_displacement_error
 from sgan.utils import relative_to_abs, get_dset_path
 
@@ -24,7 +24,6 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--model_path', type=str)
 parser.add_argument('--num_samples', default=200, type=int)
 parser.add_argument('--dset_type', default='test', type=str)
-parser.add_argument('--local_neigh_size', default = 1, type =int) #NHI: local info neighbor size
 
 def get_generator(checkpoint):
     args = AttrDict(checkpoint['args'])
@@ -45,15 +44,14 @@ def get_generator(checkpoint):
         bottleneck_dim=args.bottleneck_dim,
         neighborhood_size=args.neighborhood_size,
         grid_size=args.grid_size,
-        batch_norm=args.batch_norm,
-        local_neigh_size = args.local_neigh_size) # NHI: local neighbor size default is 1 
+        batch_norm=args.batch_norm)
     generator.load_state_dict(checkpoint['g_state'])
     generator.cuda()
     generator.train()
     return generator
 
 
-def qualitative_eval(args, loader, generator, num_samples, processed_local_info, img, save_path, global_info):
+def qualitative_eval(args, loader, generator, num_samples, img, save_path, global_info):
     with torch.no_grad():
         for i, batch in enumerate(loader):
             batch = [tensor.cuda() for tensor in batch]
@@ -64,7 +62,7 @@ def qualitative_eval(args, loader, generator, num_samples, processed_local_info,
             fake_traj = []
             for _ in range(num_samples):
                 pred_traj_fake_rel = generator(
-                    obs_traj, obs_traj_rel, seq_start_end, processed_local_info #NHI
+                    obs_traj, obs_traj_rel, seq_start_end
                 )
                 pred_traj_fake = relative_to_abs(
                     pred_traj_fake_rel, obs_traj[-1]
@@ -97,9 +95,6 @@ def qualitative_eval(args, loader, generator, num_samples, processed_local_info,
                             plt.scatter(j, k, c='g')
                 """
                 for k in range(mean_pred_traj_met[:, 0].shape[0]):
-                    print(mean_pred_traj_met[k, 1], mean_pred_traj_met[k, 0])
-                    print(int(mean_pred_traj_met[k, 1]/float(y_max) * 16), int(mean_pred_traj_met[k, 0]/float(x_max) * 20))
-                    print("")
                     if(global_info[int(min(mean_pred_traj_met[k, 1], y_max)/float(y_max) * 16), int(min(mean_pred_traj_met[k, 0], x_max)/float(x_max) * 20)] == 1):
                         collision = True
                         break
@@ -114,10 +109,8 @@ def qualitative_eval(args, loader, generator, num_samples, processed_local_info,
 
 
 def main(args):
-    #processed_local_info = pix2met_zara.all_local_info(neigh_size = args.local_neigh_size)  #NHI: process local info now
     filepath = os.path.join(codepath, "vgg", "frame_1.png")
     img = Image.open(filepath) #NHI: graph local info
-    processed_local_info = pix2met_zara.all_local_info(neigh_size = args.local_neigh_size)  #NHI: process local info now  
     save_path = os.path.join(codepath, "..", "col_results")
     global_info = pix2met_zara.get_glob_info()
 
@@ -130,7 +123,7 @@ def main(args):
         _args = AttrDict(checkpoint['args'])
         path = get_dset_path(_args.dataset_name, args.dset_type)
         _, loader = data_loader(_args, path)
-        qualitative_eval(_args, loader, generator, args.num_samples, processed_local_info, img, save_path, global_info) #NHI
+        qualitative_eval(_args, loader, generator, args.num_samples, img, save_path, global_info) #NHI
 
 
 if __name__ == '__main__':

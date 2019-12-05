@@ -1351,3 +1351,959 @@
 [INFO: train_w_local_context.py:  350]: Done.
 [INFO: train_w_local_context.py:  356]: Saving checkpoint to ../checkpoints/checkpoint_no_model.pt
 [INFO: train_w_local_context.py:  367]: Done.
+[INFO: train_w_local_context.py:  291]: t = 6406 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.040
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.733
+[INFO: train_w_local_context.py:  246]: Starting epoch 920
+[INFO: train_w_local_context.py:  291]: t = 6411 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.035
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.728
+[INFO: train_w_local_context.py:  291]: t = 6416 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.015
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.708
+[INFO: train_w_local_context.py:  246]: Starting epoch 921
+[INFO: train_w_local_context.py:  291]: t = 6421 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.035
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.728
+[INFO: train_w_local_context.py:  246]: Starting epoch 922
+[INFO: train_w_local_context.py:  291]: t = 6426 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.048
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.741
+[INFO: train_w_local_context.py:  291]: t = 6431 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.034
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.727
+[INFO: train_w_local_context.py:  246]: Starting epoch 923
+[INFO: train_w_local_context.py:  291]: t = 6436 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.026
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.719
+[INFO: train_w_local_context.py:  246]: Starting epoch 924
+[INFO: train_w_local_context.py:  291]: t = 6441 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.031
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.724
+[INFO: train_w_local_context.py:  291]: t = 6446 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.028
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.721
+[INFO: train_w_local_context.py:  246]: Starting epoch 925
+[INFO: train_w_local_context.py:  291]: t = 6451 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.027
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.720
+[INFO: train_w_local_context.py:  291]: t = 6456 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.017
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.710
+[INFO: train_w_local_context.py:  246]: Starting epoch 926
+[INFO: train_w_local_context.py:  291]: t = 6461 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.054
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.747
+[INFO: train_w_local_context.py:  246]: Starting epoch 927
+[INFO: train_w_local_context.py:  291]: t = 6466 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.034
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.727
+[INFO: train_w_local_context.py:  291]: t = 6471 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.029
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.722
+[INFO: train_w_local_context.py:  246]: Starting epoch 928
+[INFO: train_w_local_context.py:  291]: t = 6476 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.037
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.730
+[INFO: train_w_local_context.py:  246]: Starting epoch 929
+[INFO: train_w_local_context.py:  291]: t = 6481 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.034
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.727
+[INFO: train_w_local_context.py:  291]: t = 6486 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.032
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.726
+[INFO: train_w_local_context.py:  246]: Starting epoch 930
+[INFO: train_w_local_context.py:  291]: t = 6491 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.026
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.720
+[INFO: train_w_local_context.py:  291]: t = 6496 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.013
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.706
+[INFO: train_w_local_context.py:  246]: Starting epoch 931
+[INFO: train_w_local_context.py:  291]: t = 6501 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.035
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.728
+[INFO: train_w_local_context.py:  307]: Checking stats on val ...
+[INFO: train_w_local_context.py:  311]: Checking stats on train ...
+[INFO: train_w_local_context.py:  318]:   [val] ade: 0.642
+[INFO: train_w_local_context.py:  318]:   [val] ade_l: 0.946
+[INFO: train_w_local_context.py:  318]:   [val] ade_nl: 2.001
+[INFO: train_w_local_context.py:  318]:   [val] d_loss: 1.386
+[INFO: train_w_local_context.py:  318]:   [val] fde: 1.259
+[INFO: train_w_local_context.py:  318]:   [val] fde_l: 1.854
+[INFO: train_w_local_context.py:  318]:   [val] fde_nl: 3.923
+[INFO: train_w_local_context.py:  318]:   [val] g_l2_loss_abs: 0.326
+[INFO: train_w_local_context.py:  318]:   [val] g_l2_loss_rel: 0.326
+[INFO: train_w_local_context.py:  321]:   [train] ade: 0.132
+[INFO: train_w_local_context.py:  321]:   [train] ade_l: 0.198
+[INFO: train_w_local_context.py:  321]:   [train] ade_nl: 0.393
+[INFO: train_w_local_context.py:  321]:   [train] d_loss: 1.386
+[INFO: train_w_local_context.py:  321]:   [train] fde: 0.207
+[INFO: train_w_local_context.py:  321]:   [train] fde_l: 0.311
+[INFO: train_w_local_context.py:  321]:   [train] fde_nl: 0.618
+[INFO: train_w_local_context.py:  321]:   [train] g_l2_loss_abs: 0.008
+[INFO: train_w_local_context.py:  321]:   [train] g_l2_loss_rel: 0.008
+[INFO: train_w_local_context.py:  348]: Saving checkpoint to ../checkpoints/checkpoint_with_model.pt
+[INFO: train_w_local_context.py:  350]: Done.
+[INFO: train_w_local_context.py:  356]: Saving checkpoint to ../checkpoints/checkpoint_no_model.pt
+[INFO: train_w_local_context.py:  367]: Done.
+[INFO: train_w_local_context.py:  246]: Starting epoch 932
+[INFO: train_w_local_context.py:  291]: t = 6506 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.030
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.724
+[INFO: train_w_local_context.py:  291]: t = 6511 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.042
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.735
+[INFO: train_w_local_context.py:  246]: Starting epoch 933
+[INFO: train_w_local_context.py:  291]: t = 6516 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.042
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.735
+[INFO: train_w_local_context.py:  246]: Starting epoch 934
+[INFO: train_w_local_context.py:  291]: t = 6521 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.051
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.745
+[INFO: train_w_local_context.py:  291]: t = 6526 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.036
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.730
+[INFO: train_w_local_context.py:  246]: Starting epoch 935
+[INFO: train_w_local_context.py:  291]: t = 6531 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.050
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.743
+[INFO: train_w_local_context.py:  291]: t = 6536 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.014
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.707
+[INFO: train_w_local_context.py:  246]: Starting epoch 936
+[INFO: train_w_local_context.py:  291]: t = 6541 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.041
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.735
+[INFO: train_w_local_context.py:  246]: Starting epoch 937
+[INFO: train_w_local_context.py:  291]: t = 6546 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.040
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.733
+[INFO: train_w_local_context.py:  291]: t = 6551 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.034
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.727
+[INFO: train_w_local_context.py:  246]: Starting epoch 938
+[INFO: train_w_local_context.py:  291]: t = 6556 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.048
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.741
+[INFO: train_w_local_context.py:  246]: Starting epoch 939
+[INFO: train_w_local_context.py:  291]: t = 6561 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.034
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.728
+[INFO: train_w_local_context.py:  291]: t = 6566 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.037
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.730
+[INFO: train_w_local_context.py:  246]: Starting epoch 940
+[INFO: train_w_local_context.py:  291]: t = 6571 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.035
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.729
+[INFO: train_w_local_context.py:  291]: t = 6576 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.015
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.708
+[INFO: train_w_local_context.py:  246]: Starting epoch 941
+[INFO: train_w_local_context.py:  291]: t = 6581 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.031
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.724
+[INFO: train_w_local_context.py:  246]: Starting epoch 942
+[INFO: train_w_local_context.py:  291]: t = 6586 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.037
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.730
+[INFO: train_w_local_context.py:  291]: t = 6591 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.029
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.722
+[INFO: train_w_local_context.py:  246]: Starting epoch 943
+[INFO: train_w_local_context.py:  291]: t = 6596 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.038
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.732
+[INFO: train_w_local_context.py:  246]: Starting epoch 944
+[INFO: train_w_local_context.py:  291]: t = 6601 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.063
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.756
+[INFO: train_w_local_context.py:  307]: Checking stats on val ...
+[INFO: train_w_local_context.py:  311]: Checking stats on train ...
+[INFO: train_w_local_context.py:  318]:   [val] ade: 0.635
+[INFO: train_w_local_context.py:  318]:   [val] ade_l: 0.936
+[INFO: train_w_local_context.py:  318]:   [val] ade_nl: 1.980
+[INFO: train_w_local_context.py:  318]:   [val] d_loss: 1.386
+[INFO: train_w_local_context.py:  318]:   [val] fde: 1.233
+[INFO: train_w_local_context.py:  318]:   [val] fde_l: 1.815
+[INFO: train_w_local_context.py:  318]:   [val] fde_nl: 3.842
+[INFO: train_w_local_context.py:  318]:   [val] g_l2_loss_abs: 0.318
+[INFO: train_w_local_context.py:  318]:   [val] g_l2_loss_rel: 0.318
+[INFO: train_w_local_context.py:  321]:   [train] ade: 0.162
+[INFO: train_w_local_context.py:  321]:   [train] ade_l: 0.244
+[INFO: train_w_local_context.py:  321]:   [train] ade_nl: 0.485
+[INFO: train_w_local_context.py:  321]:   [train] d_loss: 1.386
+[INFO: train_w_local_context.py:  321]:   [train] fde: 0.270
+[INFO: train_w_local_context.py:  321]:   [train] fde_l: 0.406
+[INFO: train_w_local_context.py:  321]:   [train] fde_nl: 0.807
+[INFO: train_w_local_context.py:  321]:   [train] g_l2_loss_abs: 0.015
+[INFO: train_w_local_context.py:  321]:   [train] g_l2_loss_rel: 0.015
+[INFO: train_w_local_context.py:  348]: Saving checkpoint to ../checkpoints/checkpoint_with_model.pt
+[INFO: train_w_local_context.py:  350]: Done.
+[INFO: train_w_local_context.py:  356]: Saving checkpoint to ../checkpoints/checkpoint_no_model.pt
+[INFO: train_w_local_context.py:  367]: Done.
+[INFO: train_w_local_context.py:  291]: t = 6606 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.038
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.731
+[INFO: train_w_local_context.py:  246]: Starting epoch 945
+[INFO: train_w_local_context.py:  291]: t = 6611 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.037
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.731
+[INFO: train_w_local_context.py:  291]: t = 6616 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.010
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.703
+[INFO: train_w_local_context.py:  246]: Starting epoch 946
+[INFO: train_w_local_context.py:  291]: t = 6621 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.040
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.733
+[INFO: train_w_local_context.py:  246]: Starting epoch 947
+[INFO: train_w_local_context.py:  291]: t = 6626 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.048
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.741
+[INFO: train_w_local_context.py:  291]: t = 6631 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.040
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.733
+[INFO: train_w_local_context.py:  246]: Starting epoch 948
+[INFO: train_w_local_context.py:  291]: t = 6636 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.042
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.736
+[INFO: train_w_local_context.py:  246]: Starting epoch 949
+[INFO: train_w_local_context.py:  291]: t = 6641 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.032
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.725
+[INFO: train_w_local_context.py:  291]: t = 6646 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.029
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.722
+[INFO: train_w_local_context.py:  246]: Starting epoch 950
+[INFO: train_w_local_context.py:  291]: t = 6651 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.034
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.728
+[INFO: train_w_local_context.py:  291]: t = 6656 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.021
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.714
+[INFO: train_w_local_context.py:  246]: Starting epoch 951
+[INFO: train_w_local_context.py:  291]: t = 6661 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.027
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.720
+[INFO: train_w_local_context.py:  246]: Starting epoch 952
+[INFO: train_w_local_context.py:  291]: t = 6666 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.023
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.716
+[INFO: train_w_local_context.py:  291]: t = 6671 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.026
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.719
+[INFO: train_w_local_context.py:  246]: Starting epoch 953
+[INFO: train_w_local_context.py:  291]: t = 6676 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.032
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.726
+[INFO: train_w_local_context.py:  246]: Starting epoch 954
+[INFO: train_w_local_context.py:  291]: t = 6681 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.036
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.729
+[INFO: train_w_local_context.py:  291]: t = 6686 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.022
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.715
+[INFO: train_w_local_context.py:  246]: Starting epoch 955
+[INFO: train_w_local_context.py:  291]: t = 6691 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.027
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.720
+[INFO: train_w_local_context.py:  291]: t = 6696 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.016
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.709
+[INFO: train_w_local_context.py:  246]: Starting epoch 956
+[INFO: train_w_local_context.py:  291]: t = 6701 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.032
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.725
+[INFO: train_w_local_context.py:  307]: Checking stats on val ...
+[INFO: train_w_local_context.py:  311]: Checking stats on train ...
+[INFO: train_w_local_context.py:  318]:   [val] ade: 0.624
+[INFO: train_w_local_context.py:  318]:   [val] ade_l: 0.919
+[INFO: train_w_local_context.py:  318]:   [val] ade_nl: 1.945
+[INFO: train_w_local_context.py:  318]:   [val] d_loss: 1.386
+[INFO: train_w_local_context.py:  318]:   [val] fde: 1.212
+[INFO: train_w_local_context.py:  318]:   [val] fde_l: 1.784
+[INFO: train_w_local_context.py:  318]:   [val] fde_nl: 3.776
+[INFO: train_w_local_context.py:  318]:   [val] g_l2_loss_abs: 0.307
+[INFO: train_w_local_context.py:  318]:   [val] g_l2_loss_rel: 0.307
+[INFO: train_w_local_context.py:  321]:   [train] ade: 0.154
+[INFO: train_w_local_context.py:  321]:   [train] ade_l: 0.232
+[INFO: train_w_local_context.py:  321]:   [train] ade_nl: 0.461
+[INFO: train_w_local_context.py:  321]:   [train] d_loss: 1.386
+[INFO: train_w_local_context.py:  321]:   [train] fde: 0.260
+[INFO: train_w_local_context.py:  321]:   [train] fde_l: 0.392
+[INFO: train_w_local_context.py:  321]:   [train] fde_nl: 0.778
+[INFO: train_w_local_context.py:  321]:   [train] g_l2_loss_abs: 0.012
+[INFO: train_w_local_context.py:  321]:   [train] g_l2_loss_rel: 0.012
+[INFO: train_w_local_context.py:  328]: New low for avg_disp_error
+[INFO: train_w_local_context.py:  334]: New low for avg_disp_error_nl
+[INFO: train_w_local_context.py:  348]: Saving checkpoint to ../checkpoints/checkpoint_with_model.pt
+[INFO: train_w_local_context.py:  350]: Done.
+[INFO: train_w_local_context.py:  356]: Saving checkpoint to ../checkpoints/checkpoint_no_model.pt
+[INFO: train_w_local_context.py:  367]: Done.
+[INFO: train_w_local_context.py:  246]: Starting epoch 957
+[INFO: train_w_local_context.py:  291]: t = 6706 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.041
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.734
+[INFO: train_w_local_context.py:  291]: t = 6711 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.029
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.722
+[INFO: train_w_local_context.py:  246]: Starting epoch 958
+[INFO: train_w_local_context.py:  291]: t = 6716 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.035
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.728
+[INFO: train_w_local_context.py:  246]: Starting epoch 959
+[INFO: train_w_local_context.py:  291]: t = 6721 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.033
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.726
+[INFO: train_w_local_context.py:  291]: t = 6726 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.031
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.724
+[INFO: train_w_local_context.py:  246]: Starting epoch 960
+[INFO: train_w_local_context.py:  291]: t = 6731 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.028
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.721
+[INFO: train_w_local_context.py:  291]: t = 6736 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.013
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.706
+[INFO: train_w_local_context.py:  246]: Starting epoch 961
+[INFO: train_w_local_context.py:  291]: t = 6741 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.047
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.740
+[INFO: train_w_local_context.py:  246]: Starting epoch 962
+[INFO: train_w_local_context.py:  291]: t = 6746 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.038
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.731
+[INFO: train_w_local_context.py:  291]: t = 6751 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.030
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.723
+[INFO: train_w_local_context.py:  246]: Starting epoch 963
+[INFO: train_w_local_context.py:  291]: t = 6756 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.063
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.756
+[INFO: train_w_local_context.py:  246]: Starting epoch 964
+[INFO: train_w_local_context.py:  291]: t = 6761 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.082
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.775
+[INFO: train_w_local_context.py:  291]: t = 6766 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.042
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.736
+[INFO: train_w_local_context.py:  246]: Starting epoch 965
+[INFO: train_w_local_context.py:  291]: t = 6771 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.045
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.738
+[INFO: train_w_local_context.py:  291]: t = 6776 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.020
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.713
+[INFO: train_w_local_context.py:  246]: Starting epoch 966
+[INFO: train_w_local_context.py:  291]: t = 6781 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.032
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.725
+[INFO: train_w_local_context.py:  246]: Starting epoch 967
+[INFO: train_w_local_context.py:  291]: t = 6786 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.034
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.727
+[INFO: train_w_local_context.py:  291]: t = 6791 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.031
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.725
+[INFO: train_w_local_context.py:  246]: Starting epoch 968
+[INFO: train_w_local_context.py:  291]: t = 6796 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.029
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.722
+[INFO: train_w_local_context.py:  246]: Starting epoch 969
+[INFO: train_w_local_context.py:  291]: t = 6801 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.034
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.727
+[INFO: train_w_local_context.py:  307]: Checking stats on val ...
+[INFO: train_w_local_context.py:  311]: Checking stats on train ...
+[INFO: train_w_local_context.py:  318]:   [val] ade: 0.622
+[INFO: train_w_local_context.py:  318]:   [val] ade_l: 0.916
+[INFO: train_w_local_context.py:  318]:   [val] ade_nl: 1.939
+[INFO: train_w_local_context.py:  318]:   [val] d_loss: 1.386
+[INFO: train_w_local_context.py:  318]:   [val] fde: 1.218
+[INFO: train_w_local_context.py:  318]:   [val] fde_l: 1.794
+[INFO: train_w_local_context.py:  318]:   [val] fde_nl: 3.796
+[INFO: train_w_local_context.py:  318]:   [val] g_l2_loss_abs: 0.306
+[INFO: train_w_local_context.py:  318]:   [val] g_l2_loss_rel: 0.306
+[INFO: train_w_local_context.py:  321]:   [train] ade: 0.139
+[INFO: train_w_local_context.py:  321]:   [train] ade_l: 0.210
+[INFO: train_w_local_context.py:  321]:   [train] ade_nl: 0.416
+[INFO: train_w_local_context.py:  321]:   [train] d_loss: 1.386
+[INFO: train_w_local_context.py:  321]:   [train] fde: 0.230
+[INFO: train_w_local_context.py:  321]:   [train] fde_l: 0.346
+[INFO: train_w_local_context.py:  321]:   [train] fde_nl: 0.687
+[INFO: train_w_local_context.py:  321]:   [train] g_l2_loss_abs: 0.010
+[INFO: train_w_local_context.py:  321]:   [train] g_l2_loss_rel: 0.010
+[INFO: train_w_local_context.py:  328]: New low for avg_disp_error
+[INFO: train_w_local_context.py:  334]: New low for avg_disp_error_nl
+[INFO: train_w_local_context.py:  348]: Saving checkpoint to ../checkpoints/checkpoint_with_model.pt
+[INFO: train_w_local_context.py:  350]: Done.
+[INFO: train_w_local_context.py:  356]: Saving checkpoint to ../checkpoints/checkpoint_no_model.pt
+[INFO: train_w_local_context.py:  367]: Done.
+[INFO: train_w_local_context.py:  291]: t = 6806 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.041
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.734
+[INFO: train_w_local_context.py:  246]: Starting epoch 970
+[INFO: train_w_local_context.py:  291]: t = 6811 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.025
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.719
+[INFO: train_w_local_context.py:  291]: t = 6816 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.008
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.702
+[INFO: train_w_local_context.py:  246]: Starting epoch 971
+[INFO: train_w_local_context.py:  291]: t = 6821 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.024
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.718
+[INFO: train_w_local_context.py:  246]: Starting epoch 972
+[INFO: train_w_local_context.py:  291]: t = 6826 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.029
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.723
+[INFO: train_w_local_context.py:  291]: t = 6831 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.034
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.727
+[INFO: train_w_local_context.py:  246]: Starting epoch 973
+[INFO: train_w_local_context.py:  291]: t = 6836 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.036
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.729
+[INFO: train_w_local_context.py:  246]: Starting epoch 974
+[INFO: train_w_local_context.py:  291]: t = 6841 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.028
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.721
+[INFO: train_w_local_context.py:  291]: t = 6846 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.029
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.722
+[INFO: train_w_local_context.py:  246]: Starting epoch 975
+[INFO: train_w_local_context.py:  291]: t = 6851 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.049
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.742
+[INFO: train_w_local_context.py:  291]: t = 6856 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.010
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.703
+[INFO: train_w_local_context.py:  246]: Starting epoch 976
+[INFO: train_w_local_context.py:  291]: t = 6861 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.035
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.728
+[INFO: train_w_local_context.py:  246]: Starting epoch 977
+[INFO: train_w_local_context.py:  291]: t = 6866 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.034
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.727
+[INFO: train_w_local_context.py:  291]: t = 6871 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.026
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.719
+[INFO: train_w_local_context.py:  246]: Starting epoch 978
+[INFO: train_w_local_context.py:  291]: t = 6876 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.029
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.722
+[INFO: train_w_local_context.py:  246]: Starting epoch 979
+[INFO: train_w_local_context.py:  291]: t = 6881 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.027
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.720
+[INFO: train_w_local_context.py:  291]: t = 6886 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.032
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.725
+[INFO: train_w_local_context.py:  246]: Starting epoch 980
+[INFO: train_w_local_context.py:  291]: t = 6891 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.029
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.722
+[INFO: train_w_local_context.py:  291]: t = 6896 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.009
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.702
+[INFO: train_w_local_context.py:  246]: Starting epoch 981
+[INFO: train_w_local_context.py:  291]: t = 6901 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.032
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.725
+[INFO: train_w_local_context.py:  307]: Checking stats on val ...
+[INFO: train_w_local_context.py:  311]: Checking stats on train ...
+[INFO: train_w_local_context.py:  318]:   [val] ade: 0.633
+[INFO: train_w_local_context.py:  318]:   [val] ade_l: 0.932
+[INFO: train_w_local_context.py:  318]:   [val] ade_nl: 1.973
+[INFO: train_w_local_context.py:  318]:   [val] d_loss: 1.386
+[INFO: train_w_local_context.py:  318]:   [val] fde: 1.239
+[INFO: train_w_local_context.py:  318]:   [val] fde_l: 1.824
+[INFO: train_w_local_context.py:  318]:   [val] fde_nl: 3.861
+[INFO: train_w_local_context.py:  318]:   [val] g_l2_loss_abs: 0.315
+[INFO: train_w_local_context.py:  318]:   [val] g_l2_loss_rel: 0.315
+[INFO: train_w_local_context.py:  321]:   [train] ade: 0.149
+[INFO: train_w_local_context.py:  321]:   [train] ade_l: 0.224
+[INFO: train_w_local_context.py:  321]:   [train] ade_nl: 0.446
+[INFO: train_w_local_context.py:  321]:   [train] d_loss: 1.386
+[INFO: train_w_local_context.py:  321]:   [train] fde: 0.243
+[INFO: train_w_local_context.py:  321]:   [train] fde_l: 0.366
+[INFO: train_w_local_context.py:  321]:   [train] fde_nl: 0.727
+[INFO: train_w_local_context.py:  321]:   [train] g_l2_loss_abs: 0.010
+[INFO: train_w_local_context.py:  321]:   [train] g_l2_loss_rel: 0.010
+[INFO: train_w_local_context.py:  348]: Saving checkpoint to ../checkpoints/checkpoint_with_model.pt
+[INFO: train_w_local_context.py:  350]: Done.
+[INFO: train_w_local_context.py:  356]: Saving checkpoint to ../checkpoints/checkpoint_no_model.pt
+[INFO: train_w_local_context.py:  367]: Done.
+[INFO: train_w_local_context.py:  246]: Starting epoch 982
+[INFO: train_w_local_context.py:  291]: t = 6906 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.035
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.728
+[INFO: train_w_local_context.py:  291]: t = 6911 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.034
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.727
+[INFO: train_w_local_context.py:  246]: Starting epoch 983
+[INFO: train_w_local_context.py:  291]: t = 6916 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.035
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.728
+[INFO: train_w_local_context.py:  246]: Starting epoch 984
+[INFO: train_w_local_context.py:  291]: t = 6921 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.027
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.720
+[INFO: train_w_local_context.py:  291]: t = 6926 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.039
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.732
+[INFO: train_w_local_context.py:  246]: Starting epoch 985
+[INFO: train_w_local_context.py:  291]: t = 6931 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.030
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.723
+[INFO: train_w_local_context.py:  291]: t = 6936 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.006
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.700
+[INFO: train_w_local_context.py:  246]: Starting epoch 986
+[INFO: train_w_local_context.py:  291]: t = 6941 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.024
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.717
+[INFO: train_w_local_context.py:  246]: Starting epoch 987
+[INFO: train_w_local_context.py:  291]: t = 6946 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.033
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.726
+[INFO: train_w_local_context.py:  291]: t = 6951 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.030
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.723
+[INFO: train_w_local_context.py:  246]: Starting epoch 988
+[INFO: train_w_local_context.py:  291]: t = 6956 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.023
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.716
+[INFO: train_w_local_context.py:  246]: Starting epoch 989
+[INFO: train_w_local_context.py:  291]: t = 6961 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.025
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.718
+[INFO: train_w_local_context.py:  291]: t = 6966 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.026
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.719
+[INFO: train_w_local_context.py:  246]: Starting epoch 990
+[INFO: train_w_local_context.py:  291]: t = 6971 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.025
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.718
+[INFO: train_w_local_context.py:  291]: t = 6976 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.012
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.705
+[INFO: train_w_local_context.py:  246]: Starting epoch 991
+[INFO: train_w_local_context.py:  291]: t = 6981 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.025
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.718
+[INFO: train_w_local_context.py:  246]: Starting epoch 992
+[INFO: train_w_local_context.py:  291]: t = 6986 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.026
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.719
+[INFO: train_w_local_context.py:  291]: t = 6991 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.023
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.716
+[INFO: train_w_local_context.py:  246]: Starting epoch 993
+[INFO: train_w_local_context.py:  291]: t = 6996 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.027
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.720
+[INFO: train_w_local_context.py:  246]: Starting epoch 994
+[INFO: train_w_local_context.py:  291]: t = 7001 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.022
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.715
+[INFO: train_w_local_context.py:  307]: Checking stats on val ...
+[INFO: train_w_local_context.py:  311]: Checking stats on train ...
+[INFO: train_w_local_context.py:  318]:   [val] ade: 0.635
+[INFO: train_w_local_context.py:  318]:   [val] ade_l: 0.935
+[INFO: train_w_local_context.py:  318]:   [val] ade_nl: 1.979
+[INFO: train_w_local_context.py:  318]:   [val] d_loss: 1.386
+[INFO: train_w_local_context.py:  318]:   [val] fde: 1.248
+[INFO: train_w_local_context.py:  318]:   [val] fde_l: 1.838
+[INFO: train_w_local_context.py:  318]:   [val] fde_nl: 3.889
+[INFO: train_w_local_context.py:  318]:   [val] g_l2_loss_abs: 0.319
+[INFO: train_w_local_context.py:  318]:   [val] g_l2_loss_rel: 0.319
+[INFO: train_w_local_context.py:  321]:   [train] ade: 0.109
+[INFO: train_w_local_context.py:  321]:   [train] ade_l: 0.163
+[INFO: train_w_local_context.py:  321]:   [train] ade_nl: 0.325
+[INFO: train_w_local_context.py:  321]:   [train] d_loss: 1.386
+[INFO: train_w_local_context.py:  321]:   [train] fde: 0.176
+[INFO: train_w_local_context.py:  321]:   [train] fde_l: 0.265
+[INFO: train_w_local_context.py:  321]:   [train] fde_nl: 0.525
+[INFO: train_w_local_context.py:  321]:   [train] g_l2_loss_abs: 0.006
+[INFO: train_w_local_context.py:  321]:   [train] g_l2_loss_rel: 0.006
+[INFO: train_w_local_context.py:  348]: Saving checkpoint to ../checkpoints/checkpoint_with_model.pt
+[INFO: train_w_local_context.py:  350]: Done.
+[INFO: train_w_local_context.py:  356]: Saving checkpoint to ../checkpoints/checkpoint_no_model.pt
+[INFO: train_w_local_context.py:  367]: Done.
+[INFO: train_w_local_context.py:  291]: t = 7006 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.028
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.721
+[INFO: train_w_local_context.py:  246]: Starting epoch 995
+[INFO: train_w_local_context.py:  291]: t = 7011 / 7012
+[INFO: train_w_local_context.py:  293]:   [D] D_data_loss: 1.386
+[INFO: train_w_local_context.py:  293]:   [D] D_total_loss: 1.386
+[INFO: train_w_local_context.py:  296]:   [G] G_discriminator_loss: 0.693
+[INFO: train_w_local_context.py:  296]:   [G] G_l2_loss_rel: 0.023
+[INFO: train_w_local_context.py:  296]:   [G] G_total_loss: 0.716

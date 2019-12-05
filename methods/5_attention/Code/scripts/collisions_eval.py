@@ -16,6 +16,8 @@ from sgan.utils import relative_to_abs, get_dset_path
 
 codepath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(codepath)
+from vgg.utils import vgg_preprocess, load_vgg16 # NHI: add vgg utils 
+from vgg.lclgph import LocalGraph # NHI: add vgg utils 
 from PIL import Image
 
 from pix2met import pix2met_zara
@@ -117,7 +119,7 @@ def main(args):
     #processed_local_info = pix2met_zara.all_local_info(neigh_size = args.local_neigh_size)  #NHI: process local info now
     filepath = os.path.join(codepath, "vgg", "frame_1.png")
     img = Image.open(filepath) #NHI: graph local info
-    processed_local_info = pix2met_zara.all_local_info(neigh_size = args.local_neigh_size)  #NHI: process local info now  
+    processed_local_info = LocalGraph(img).cuda()
     save_path = os.path.join(codepath, "..", "col_results")
     global_info = pix2met_zara.get_glob_info()
 

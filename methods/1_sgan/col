@@ -1,0 +1,9 @@
+1_sgan
+Traceback (most recent call last):
+  File "scripts/collisions_eval.py", line 131, in <module>
+    main(args)
+  File "scripts/collisions_eval.py", line 126, in main
+    qualitative_eval(_args, loader, generator, args.num_samples, img, save_path, global_info) #NHI
+  File "scripts/collisions_eval.py", line 98, in qualitative_eval
+    if(global_info[int(min(mean_pred_traj_met[k, 1], y_max)/float(y_max) * 16), int(min(mean_pred_traj_met[k, 0], x_max)/float(x_max) * 20)] == 1):
+IndexError: index 20 is out of bounds for dimension 1 with size 20
