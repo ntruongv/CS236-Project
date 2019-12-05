@@ -1,5 +1,6 @@
 import argparse
 import os
+import glob
 import torch
 import sys
 import numpy as numpy
@@ -9,13 +10,14 @@ import matplotlib.pyplot as plt
 
 from attrdict import AttrDict
 
+codepath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(codepath)
+
 from sgan.data.loader import data_loader
 from sgan.models_w_local_context import TrajectoryGenerator
 from sgan.losses import displacement_error, final_displacement_error
 from sgan.utils import relative_to_abs, get_dset_path
 
-codepath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.append(codepath)
 from vgg.utils import vgg_preprocess, load_vgg16 # NHI: add vgg utils 
 from vgg.lclgph import LocalGraph # NHI: add vgg utils 
 from PIL import Image
@@ -86,9 +88,9 @@ def qualitative_eval(args, loader, generator, num_samples, processed_local_info,
                 mean_pred_traj_cpu = mean_fake_traj[:,person_id,:].data.cpu()
                 mean_pred_traj_met = pix2met_zara.met2pix_cpu(mean_pred_traj_cpu)
                 std_fake_traj_cpu = std_fake_traj[:,person_id,:].data.cpu()
-                plt.imshow(img)
-                plt.scatter(input_traj_met[:,0], input_traj_met[:,1], c='b')
-                plt.scatter(mean_pred_traj_met[:,0], mean_pred_traj_met[:,1], c='g')
+                #plt.imshow(img)
+                #plt.scatter(input_traj_met[:,0], input_traj_met[:,1], c='b')
+                #plt.scatter(mean_pred_traj_met[:,0], mean_pred_traj_met[:,1], c='g')
                 collision = False
                 x_max = 720
                 y_max = 576
@@ -96,11 +98,13 @@ def qualitative_eval(args, loader, generator, num_samples, processed_local_info,
                 for k_idx, k in enumerate(range(0, y_max, 36)):
                     for j_idx, j in enumerate(range(0, x_max, 36)):
                         if(global_info[k_idx, j_idx] == 0):
-                            plt.scatter(j, k, c='r')
+                            #plt.scatter(j, k, c='r')
                         else:
-                            plt.scatter(j, k, c='g')
+                            #plt.scatter(j, k, c='g')
                 """
                 for k in range(mean_pred_traj_met[:, 0].shape[0]):
+                    if(global_info[int(min(input_traj_met[-1, 1], y_max-.001)), int(min(input_traj_met[-1, 0], x_max-.001))] == 0):
+                        continue
                     total_count += 1
                     print(mean_pred_traj_met[k, 1], mean_pred_traj_met[k, 0])
                     print(int(mean_pred_traj_met[k, 1]/float(y_max) * 16), int(mean_pred_traj_met[k, 0]/float(x_max) * 20))
@@ -109,11 +113,11 @@ def qualitative_eval(args, loader, generator, num_samples, processed_local_info,
                         collision = True
                         col_count += 1
                         
-                if(collision):
-                    plt.savefig(os.path.join(save_path, "col_" + str(i) + "_" + str(person_id) + '.png'))
-                else:
-                    plt.savefig(os.path.join(save_path, "nocol_" + str(i) + "_" + str(person_id) + '.png'))
-                plt.close()
+                #if(collision):
+                    #plt.savefig(os.path.join(save_path, "col_" + str(i) + "_" + str(person_id) + '.png'))
+                #else:
+                    #plt.savefig(os.path.join(save_path, "nocol_" + str(i) + "_" + str(person_id) + '.png'))
+                #plt.close()
 
         print("collisions: " + str(col_count) + "/" + str(total_count))
         return None
@@ -127,16 +131,16 @@ def main(args):
     save_path = os.path.join(codepath, "..", "col_results")
     global_info = pix2met_zara.get_glob_info()
 
-    if not os.path.exists(save_path):
-        os.makedirs(save_path)
-
     if os.path.isdir(args.model_path):
-        checkpoint = torch.load(os.path.join(args.model_path, "checkpoint_with_model.pt"))
-        generator = get_generator(checkpoint)
-        _args = AttrDict(checkpoint['args'])
-        path = get_dset_path(_args.dataset_name, args.dset_type)
-        _, loader = data_loader(_args, path)
-        qualitative_eval(_args, loader, generator, args.num_samples, processed_local_info, img, save_path, global_info) #NHI
+        os.chdir(args.model_path)
+        for filename in glob.glob("checkpoint_with_model_*"):
+            print(filename)
+            checkpoint = torch.load(os.path.join(args.model_path, filename))
+            generator = get_generator(checkpoint)
+            _args = AttrDict(checkpoint['args'])
+            path = get_dset_path(_args.dataset_name, args.dset_type)
+            _, loader = data_loader(_args, path)
+            qualitative_eval(_args, loader, generator, args.num_samples, processed_local_info, img, save_path, global_info) #NHI
 
 
 if __name__ == '__main__':

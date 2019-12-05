@@ -347,6 +347,10 @@ def main(args):
                 )
                 logger.info('Saving checkpoint to {}'.format(checkpoint_path))
                 torch.save(checkpoint, checkpoint_path)
+                checkpoint_path = os.path.join(
+                    args.output_dir, '%s_with_model.pt' % args.checkpoint_name
+                )
+                torch.save(checkpoint, checkpoint_path)
                 logger.info('Done.')
 
                 # Save a checkpoint with no model weights by making a shallow

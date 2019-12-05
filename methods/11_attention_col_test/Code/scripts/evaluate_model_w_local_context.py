@@ -1,5 +1,6 @@
 import argparse
 import os
+import glob
 import torch
 import sys
 
@@ -108,15 +109,17 @@ def main(args):
     processed_local_info = LocalGraph(img).cuda()
 
     if os.path.isdir(args.model_path):
-        print(os.path.join(args.model_path, "checkpoint_with_model.pt"))
-        checkpoint = torch.load(os.path.join(args.model_path, "checkpoint_with_model.pt"))
-        generator = get_generator(checkpoint)
-        _args = AttrDict(checkpoint['args'])
-        path = get_dset_path(_args.dataset_name, args.dset_type)
-        _, loader = data_loader(_args, path)
-        ade, fde = evaluate(_args, loader, generator, args.num_samples, processed_local_info) #NHI
-        print('Dataset: {}, Pred Len: {}, ADE: {:.2f}, FDE: {:.2f}'.format(
-            _args.dataset_name, _args.pred_len, ade, fde))
+        os.chdir(args.model_path)
+        for filename in glob.glob("checkpoint_with_model_*"):
+            print(filename)
+            checkpoint = torch.load(os.path.join(args.model_path, filename))
+            generator = get_generator(checkpoint)
+            _args = AttrDict(checkpoint['args'])
+            path = get_dset_path(_args.dataset_name, args.dset_type)
+            _, loader = data_loader(_args, path)
+            ade, fde = evaluate(_args, loader, generator, args.num_samples, processed_local_info) #NHI
+            print('Dataset: {}, Pred Len: {}, ADE: {:.2f}, FDE: {:.2f}'.format(
+                _args.dataset_name, _args.pred_len, ade, fde))
 
 
 if __name__ == '__main__':
