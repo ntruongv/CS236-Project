@@ -10,20 +10,21 @@ import matplotlib.pyplot as plt
 from attrdict import AttrDict
 
 from sgan.data.loader import data_loader
-from sgan.models import TrajectoryGenerator
+from sgan.models_w_local_context import TrajectoryGenerator
 from sgan.losses import displacement_error, final_displacement_error
 from sgan.utils import relative_to_abs, get_dset_path
 
 codepath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(codepath)
+from PIL import Image
 
 from pix2met import pix2met_zara
-from PIL import Image
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--model_path', type=str)
 parser.add_argument('--num_samples', default=200, type=int)
 parser.add_argument('--dset_type', default='test', type=str)
+parser.add_argument('--local_neigh_size', default = 1, type =int) #NHI: local info neighbor size
 
 def get_generator(checkpoint):
     args = AttrDict(checkpoint['args'])
@@ -44,14 +45,15 @@ def get_generator(checkpoint):
         bottleneck_dim=args.bottleneck_dim,
         neighborhood_size=args.neighborhood_size,
         grid_size=args.grid_size,
-        batch_norm=args.batch_norm) 
+        batch_norm=args.batch_norm,
+        local_neigh_size = args.local_neigh_size) # NHI: local neighbor size default is 1 
     generator.load_state_dict(checkpoint['g_state'])
     generator.cuda()
     generator.train()
     return generator
 
 
-def qualitative_eval(args, loader, generator, num_samples, img, save_path):
+def qualitative_eval(args, loader, generator, num_samples, processed_local_info, img, save_path, global_info):
     with torch.no_grad():
         for i, batch in enumerate(loader):
             batch = [tensor.cuda() for tensor in batch]
@@ -62,7 +64,7 @@ def qualitative_eval(args, loader, generator, num_samples, img, save_path):
             fake_traj = []
             for _ in range(num_samples):
                 pred_traj_fake_rel = generator(
-                    obs_traj, obs_traj_rel, seq_start_end
+                    obs_traj, obs_traj_rel, seq_start_end, processed_local_info #NHI
                 )
                 pred_traj_fake = relative_to_abs(
                     pred_traj_fake_rel, obs_traj[-1]
@@ -82,15 +84,41 @@ def qualitative_eval(args, loader, generator, num_samples, img, save_path):
                 std_fake_traj_cpu = std_fake_traj[:,person_id,:].data.cpu()
                 plt.imshow(img)
                 plt.scatter(input_traj_met[:,0], input_traj_met[:,1], c='b')
-                plt.scatter(mean_pred_traj_met[:,0], mean_pred_traj_met[:,1], c='r')
-                plt.savefig(os.path.join(save_path, str(i) + "_" + str(person_id) + '.png'))
+                plt.scatter(mean_pred_traj_met[:,0], mean_pred_traj_met[:,1], c='y')
+                collision = False
+                x_max = 720
+                y_max = 576
+                for k_idx, k in enumerate(range(0, y_max, 36)):
+                    for j_idx, j in enumerate(range(0, x_max, 36)):
+                        if(global_info[k_idx, j_idx] == 0):
+                            plt.scatter(j, k, c='r')
+                        else:
+                            plt.scatter(j, k, c='g')
+                for k in range(mean_pred_traj_met[:, 0].shape[0]):
+                    print(k)
+                    print(int(mean_pred_traj_met[k, 1]/y_max), int(mean_pred_traj_met[k, 0]/x_max))
+                    if(global_info[int(mean_pred_traj_met[k, 1]/float(y_max)), int(mean_pred_traj_met[k, 0]/float(x_max))] == 1):
+                        collision = True
+                        break
+                        
+                if(collision):
+                    plt.savefig(os.path.join(save_path, "col_" + str(i) + "_" + str(person_id) + '.png'))
+                else:
+                    plt.savefig(os.path.join(save_path, "nocol_" + str(i) + "_" + str(person_id) + '.png'))
                 plt.close()
+                return
 
         return None
 
 
 def main(args):
-    save_path = os.path.join(codepath, "..", "qualitative_results")
+    #processed_local_info = pix2met_zara.all_local_info(neigh_size = args.local_neigh_size)  #NHI: process local info now
+    filepath = os.path.join(codepath, "vgg", "frame_1.png")
+    img = Image.open(filepath) #NHI: graph local info
+    processed_local_info = pix2met_zara.all_local_info(neigh_size = args.local_neigh_size)  #NHI: process local info now  
+    save_path = os.path.join(codepath, "..", "col_results")
+    global_info = pix2met_zara.get_glob_info()
+
     if not os.path.exists(save_path):
         os.makedirs(save_path)
 
@@ -100,9 +128,7 @@ def main(args):
         _args = AttrDict(checkpoint['args'])
         path = get_dset_path(_args.dataset_name, args.dset_type)
         _, loader = data_loader(_args, path)
-        filepath = os.path.join(codepath, "..", "..", "2_hand_label", "Code", "vgg", "frame_1.png")
-        img = Image.open(filepath)
-        qualitative_eval(_args, loader, generator, args.num_samples, img, save_path) #NHI
+        qualitative_eval(_args, loader, generator, args.num_samples, processed_local_info, img, save_path, global_info) #NHI
 
 
 if __name__ == '__main__':

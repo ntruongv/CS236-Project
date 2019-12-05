@@ -1,10 +1,10 @@
 import numpy as np
 import torch 
+import os
 
-zara_glob_info = torch.tensor(np.genfromtxt('/home/dansj/CS236-Project/methods/2_hand_label/Code/pix2met/obj_info.csv', delimiter=''))
-
-def get_glob_info():
-    return zara_glob_info
+codepath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+filepath = os.path.join(codepath, "pix2met", "obj_info.csv")
+zara_glob_info = torch.tensor(np.genfromtxt(filepath, delimiter=''))
 
 def pix2met(pix_arr):
        """

@@ -2,29 +2,26 @@ import argparse
 import os
 import torch
 import sys
-import numpy as numpy
-import matplotlib
-matplotlib.use('pdf')
-import matplotlib.pyplot as plt
 
 from attrdict import AttrDict
+
+codepath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(codepath)
+print(codepath)
 
 from sgan.data.loader import data_loader
 from sgan.models_w_local_context import TrajectoryGenerator
 from sgan.losses import displacement_error, final_displacement_error
 from sgan.utils import relative_to_abs, get_dset_path
 
-codepath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.append(codepath)
+import pix2met.pix2met_zara as pix2met_zara # NHI: script to generate local data
 from vgg.utils import vgg_preprocess, load_vgg16 # NHI: add vgg utils 
 from vgg.lclgph import LocalGraph # NHI: add vgg utils 
 from PIL import Image
 
-from pix2met import pix2met_zara
-
 parser = argparse.ArgumentParser()
 parser.add_argument('--model_path', type=str)
-parser.add_argument('--num_samples', default=200, type=int)
+parser.add_argument('--num_samples', default=20, type=int)
 parser.add_argument('--dset_type', default='test', type=str)
 parser.add_argument('--local_neigh_size', default = 1, type =int) #NHI: local info neighbor size
 
@@ -48,22 +45,39 @@ def get_generator(checkpoint):
         neighborhood_size=args.neighborhood_size,
         grid_size=args.grid_size,
         batch_norm=args.batch_norm,
-        local_neigh_size = args.local_neigh_size) # NHI: local neighbor size default is 1 
+        local_neigh_size=1) # NHI: local neighbor size default is 1 
     generator.load_state_dict(checkpoint['g_state'])
     generator.cuda()
     generator.train()
     return generator
 
 
-def qualitative_eval(args, loader, generator, num_samples, processed_local_info, img, save_path):
+def evaluate_helper(error, seq_start_end):
+    sum_ = 0
+    error = torch.stack(error, dim=1)
+
+    for (start, end) in seq_start_end:
+        start = start.item()
+        end = end.item()
+        _error = error[start:end]
+        _error = torch.sum(_error, dim=0)
+        _error = torch.min(_error)
+        sum_ += _error
+    return sum_
+
+
+def evaluate(args, loader, generator, num_samples, processed_local_info): #NHI: local info added 
+    ade_outer, fde_outer = [], []
+    total_traj = 0
     with torch.no_grad():
-        for i, batch in enumerate(loader):
+        for batch in loader:
             batch = [tensor.cuda() for tensor in batch]
             (obs_traj, pred_traj_gt, obs_traj_rel, pred_traj_gt_rel,
-                non_linear_ped, loss_mask, seq_start_end) = batch
+             non_linear_ped, loss_mask, seq_start_end) = batch
 
-            
-            fake_traj = []
+            ade, fde = [], []
+            total_traj += pred_traj_gt.size(1)
+
             for _ in range(num_samples):
                 pred_traj_fake_rel = generator(
                     obs_traj, obs_traj_rel, seq_start_end, processed_local_info #NHI
@@ -71,44 +85,38 @@ def qualitative_eval(args, loader, generator, num_samples, processed_local_info,
                 pred_traj_fake = relative_to_abs(
                     pred_traj_fake_rel, obs_traj[-1]
                 )
-                
-                fake_traj.append(pred_traj_fake)
+                ade.append(displacement_error(
+                    pred_traj_fake, pred_traj_gt, mode='raw'
+                ))
+                fde.append(final_displacement_error(
+                    pred_traj_fake[-1], pred_traj_gt[-1], mode='raw'
+                ))
 
-            all_fake_traj = torch.stack(fake_traj) #shape sample, seq length, batch, 2
-            mean_fake_traj = all_fake_traj.mean(axis=0)
-            std_fake_traj = all_fake_traj.std(axis=0)
-            
-            for person_id in range(mean_fake_traj.shape[1]):
-                input_traj_cpu = obs_traj[:,person_id,:].data.cpu()
-                input_traj_met = pix2met_zara.met2pix_cpu(input_traj_cpu)
-                mean_pred_traj_cpu = mean_fake_traj[:,person_id,:].data.cpu()
-                mean_pred_traj_met = pix2met_zara.met2pix_cpu(mean_pred_traj_cpu)
-                std_fake_traj_cpu = std_fake_traj[:,person_id,:].data.cpu()
-                plt.imshow(img)
-                plt.scatter(input_traj_met[:,0], input_traj_met[:,1], c='b')
-                plt.scatter(mean_pred_traj_met[:,0], mean_pred_traj_met[:,1], c='g')
-                plt.savefig(os.path.join(save_path, str(i) + "_" + str(person_id) + '.png'))
-                plt.close()
+            ade_sum = evaluate_helper(ade, seq_start_end)
+            fde_sum = evaluate_helper(fde, seq_start_end)
 
-        return None
+            ade_outer.append(ade_sum)
+            fde_outer.append(fde_sum)
+        ade = sum(ade_outer) / (total_traj * args.pred_len)
+        fde = sum(fde_outer) / (total_traj)
+        return ade, fde
 
 
 def main(args):
-    #processed_local_info = pix2met_zara.all_local_info(neigh_size = args.local_neigh_size)  #NHI: process local info now
     filepath = os.path.join(codepath, "vgg", "frame_1.png")
     img = Image.open(filepath) #NHI: graph local info
     processed_local_info = LocalGraph(img).cuda()
-    save_path = os.path.join(codepath, "..", "qualitative_results")
-    if not os.path.exists(save_path):
-        os.makedirs(save_path)
 
     if os.path.isdir(args.model_path):
+        print(os.path.join(args.model_path, "checkpoint_with_model.pt"))
         checkpoint = torch.load(os.path.join(args.model_path, "checkpoint_with_model.pt"))
         generator = get_generator(checkpoint)
         _args = AttrDict(checkpoint['args'])
         path = get_dset_path(_args.dataset_name, args.dset_type)
         _, loader = data_loader(_args, path)
-        qualitative_eval(_args, loader, generator, args.num_samples, processed_local_info, img, save_path) #NHI
+        ade, fde = evaluate(_args, loader, generator, args.num_samples, processed_local_info) #NHI
+        print('Dataset: {}, Pred Len: {}, ADE: {:.2f}, FDE: {:.2f}'.format(
+            _args.dataset_name, _args.pred_len, ade, fde))
 
 
 if __name__ == '__main__':
