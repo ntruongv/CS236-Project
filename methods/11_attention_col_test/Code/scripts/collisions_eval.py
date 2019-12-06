@@ -106,9 +106,6 @@ def qualitative_eval(args, loader, generator, num_samples, processed_local_info,
                     if(global_info[int(min(input_traj_met[-1, 1], y_max-.001)), int(min(input_traj_met[-1, 0], x_max-.001))] == 0):
                         continue
                     total_count += 1
-                    print(mean_pred_traj_met[k, 1], mean_pred_traj_met[k, 0])
-                    print(int(mean_pred_traj_met[k, 1]/float(y_max) * 16), int(mean_pred_traj_met[k, 0]/float(x_max) * 20))
-                    print("")
                     if(global_info[int(min(mean_pred_traj_met[k, 1], y_max-.001)), int(min(mean_pred_traj_met[k, 0], x_max-.001))] == 0):
                         collision = True
                         col_count += 1

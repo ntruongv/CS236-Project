@@ -86,9 +86,9 @@ def qualitative_eval(args, loader, generator, num_samples, processed_local_info,
                 mean_pred_traj_cpu = mean_fake_traj[:,person_id,:].data.cpu()
                 mean_pred_traj_met = pix2met_zara.met2pix_cpu(mean_pred_traj_cpu)
                 std_fake_traj_cpu = std_fake_traj[:,person_id,:].data.cpu()
-                #plt.imshow(img)
-                #plt.scatter(input_traj_met[:,0], input_traj_met[:,1], c='b')
-                #plt.scatter(mean_pred_traj_met[:,0], mean_pred_traj_met[:,1], c='g')
+                plt.imshow(img)
+                plt.scatter(input_traj_met[:,0], input_traj_met[:,1], c='b')
+                plt.scatter(mean_pred_traj_met[:,0], mean_pred_traj_met[:,1], c='g')
                 collision = False
                 x_max = 720
                 y_max = 576
@@ -111,11 +111,11 @@ def qualitative_eval(args, loader, generator, num_samples, processed_local_info,
                         collision = True
                         col_count += 1
                         
-                #if(collision):
-                    #plt.savefig(os.path.join(save_path, "col_" + str(i) + "_" + str(person_id) + '.png'))
-                #else:
-                    #plt.savefig(os.path.join(save_path, "nocol_" + str(i) + "_" + str(person_id) + '.png'))
-                #plt.close()
+                if(collision):
+                    plt.savefig(os.path.join(save_path, "col_" + str(i) + "_" + str(person_id) + '.png'))
+                else:
+                    plt.savefig(os.path.join(save_path, "nocol_" + str(i) + "_" + str(person_id) + '.png'))
+                plt.close()
 
         print("collisions: " + str(col_count) + "/" + str(total_count))
         return None

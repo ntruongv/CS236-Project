@@ -1,2 +1,2 @@
 1_sgan
-Dataset: crowds_zara, Pred Len: 8, ADE: 0.38, FDE: 0.74
+Dataset: crowds_zara, Pred Len: 8, ADE: 0.40, FDE: 0.78
