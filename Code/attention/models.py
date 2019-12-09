@@ -121,5 +121,5 @@ class TrajectoryDiscriminatorPiecewise(nn.Module):
         else:
             raise NotImplementedError
         scores = self.real_classifier(classifier_input)
-        scores = scores.view(batch, -1).mean(dim=1)
+        scores = scores.view(-1, batch).mean(dim=0)
         return scores
