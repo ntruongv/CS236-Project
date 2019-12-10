@@ -9,15 +9,13 @@ import matplotlib.pyplot as plt
 
 from attrdict import AttrDict
 
-codepath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.append(codepath)
-
-
 from sgan.data.loader import data_loader
 from sgan.models_w_local_context import TrajectoryGenerator
 from sgan.losses import displacement_error, final_displacement_error
 from sgan.utils import relative_to_abs, get_dset_path
 
+codepath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(codepath)
 from vgg.utils import vgg_preprocess, load_vgg16 # NHI: add vgg utils 
 from vgg.lclgph import LocalGraph # NHI: add vgg utils 
 from PIL import Image

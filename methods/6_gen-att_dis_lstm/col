@@ -1,3 +1,2 @@
-1_sgan
+6_gen-att_dis_lstm
 rm: cannot remove 'col_results/*': No such file or directory
-collisions: 103/22936

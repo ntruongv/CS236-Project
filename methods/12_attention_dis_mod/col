@@ -1,0 +1,6 @@
+12_attention_dis_mod
+rm: cannot remove 'col_results/*': No such file or directory
+Traceback (most recent call last):
+  File "scripts/collisions_eval.py", line 12, in <module>
+    from sgan.data.loader import data_loader
+ImportError: No module named 'sgan'
