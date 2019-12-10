@@ -1,0 +1,6 @@
+11_attention_col_test
+rm: cannot remove 'col_results/*': No such file or directory
+checkpoint_with_model_t100.pt
+collisions: 112/22936
+checkpoint_with_model_t1000.pt
+collisions: 180/22936

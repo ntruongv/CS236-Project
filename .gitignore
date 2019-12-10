@@ -19,7 +19,7 @@ methods/*/Code/MODEL_ZOO.md
 methods/*/Code/README.md
 methods/*/Code/TRAINING.md
 methods/*/Code/requirements.txt
-methods/*/checkpoints*/*
+methods/*/*checkpoints*/*
 methods/*/train
 methods/*/qualitative_results/*
 methods/*/col_results/*

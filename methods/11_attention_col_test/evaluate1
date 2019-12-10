@@ -1,0 +1,26 @@
+11_attention_col_test
+/home/dansj/CS236-Project/methods/11_attention_col_test/Code
+checkpoint_with_model_t900.pt
+Dataset: crowds_zara, Pred Len: 8, ADE: 0.91, FDE: 1.58
+checkpoint_with_model_t2000.pt
+Dataset: crowds_zara, Pred Len: 8, ADE: 1.42, FDE: 2.47
+checkpoint_with_model_t1100.pt
+Dataset: crowds_zara, Pred Len: 8, ADE: 1.05, FDE: 1.81
+checkpoint_with_model_t1500.pt
+Dataset: crowds_zara, Pred Len: 8, ADE: 1.29, FDE: 2.23
+checkpoint_with_model_t2400.pt
+Dataset: crowds_zara, Pred Len: 8, ADE: 0.56, FDE: 0.99
+checkpoint_with_model_t100.pt
+Dataset: crowds_zara, Pred Len: 8, ADE: 0.91, FDE: 1.66
+checkpoint_with_model_t1900.pt
+Dataset: crowds_zara, Pred Len: 8, ADE: 1.44, FDE: 2.50
+checkpoint_with_model_t500.pt
+Dataset: crowds_zara, Pred Len: 8, ADE: 0.72, FDE: 1.25
+checkpoint_with_model_t1800.pt
+Dataset: crowds_zara, Pred Len: 8, ADE: 1.39, FDE: 2.38
+checkpoint_with_model_t400.pt
+Dataset: crowds_zara, Pred Len: 8, ADE: 0.74, FDE: 1.30
+checkpoint_with_model_t800.pt
+Dataset: crowds_zara, Pred Len: 8, ADE: 0.78, FDE: 1.36
+checkpoint_with_model_t2100.pt
+slurmstepd-icme04: error: *** JOB 1264 ON icme04 CANCELLED AT 2019-12-06T02:02:33 DUE TO TIME LIMIT ***

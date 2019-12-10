@@ -1,0 +1,14 @@
+11_attention_col_test
+rm: cannot remove 'col_results/*': No such file or directory
+checkpoint_with_model_t7000.pt
+collisions: 124/22936
+checkpoint_with_model_t6000.pt
+collisions: 117/22936
+checkpoint_with_model_t5000.pt
+collisions: 84/22936
+checkpoint_with_model_t4000.pt
+collisions: 87/22936
+checkpoint_with_model_t3000.pt
+collisions: 105/22936
+checkpoint_with_model_t1000.pt
+slurmstepd-icme01: error: *** JOB 1606 ON icme01 CANCELLED AT 2019-12-09T21:48:54 DUE TO TIME LIMIT ***
