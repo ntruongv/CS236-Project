@@ -1,4 +1,4 @@
 12_attention_dis_mod
 /home/dansj/CS236-Project/methods/12_attention_dis_mod/Code
 ../checkpoints/checkpoint_with_model.pt
-Dataset: crowds_zara, Pred Len: 8, ADE: 0.80, FDE: 1.45
+Dataset: crowds_zara, Pred Len: 8, ADE: 0.64, FDE: 1.05

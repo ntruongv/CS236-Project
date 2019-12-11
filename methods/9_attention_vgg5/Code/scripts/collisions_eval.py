@@ -127,7 +127,7 @@ def main(args):
     #processed_local_info = pix2met_zara.all_local_info(neigh_size = args.local_neigh_size)  #NHI: process local info now
     filepath = os.path.join(codepath, "vgg", "frame_1.png")
     img = Image.open(filepath) #NHI: graph local info
-    processed_local_info = LocalGraph(img).cuda()
+    processed_local_info = LocalGraph(img, out_dim=5).cuda()
     save_path = os.path.join(codepath, "..", "col_results")
     global_info = pix2met_zara.get_glob_info()
 
