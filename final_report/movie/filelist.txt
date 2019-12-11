@@ -1,0 +1,3 @@
+file 'segments/introduction.mp4'
+file 'segments/methodology.mp4'
+file 'segments/zara.mp4'

@@ -1,0 +1,147 @@
+\documentclass[final]{beamer}
+
+\usepackage[scale=1]{beamerposter} % Use the beamerposter package for laying out the poster
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{multirow}
+\usetheme{confposter} % Use the confposter theme supplied with this template
+
+\definecolor{boxedge}{RGB}{130,10,10}
+\definecolor{titlecolor}{RGB}{60,10,10}
+\definecolor{blush}{rgb}{0.87, 0.36, 0.51}
+\definecolor{brickred}{rgb}{0.93,0.88,0.9}
+
+\setbeamercolor{block title}{fg=boxedge,bg=white}
+\setbeamercolor{block body}{fg=black,bg=white}
+\setbeamercolor{block alerted title}{fg=white,bg=boxedge}
+\setbeamercolor{block alerted body}{fg=black,bg=white}
+
+\colorlet{shadecolor}{brickred}
+\colorlet{framecolor}{boxedge}
+
+\newenvironment{frshaded}{%
+    \def\FrameCommand{\fboxrule=\FrameRule\fboxsep=\FrameSep \fcolorbox{framecolor}{shadecolor}}%
+    \MakeFramed {\FrameRestore}}%
+    {\endMakeFramed}
+% Many more colors are available for use in beamerthemeconfposter.sty
+
+%-----------------------------------------------------------
+% Define the column widths and overall poster size
+% To set effective sepwid, onecolwid and twocolwid values, first choose how many columns you want and how much separation you want between columns
+% In this template, the separation width chosen is 0.024 of the paper width and a 4-column layout
+% onecolwid should therefore be (1-(# of columns+1)*sepwid)/# of columns e.g. (1-(4+1)*0.024)/4 = 0.22
+% Set twocolwid to be (2*onecolwid)+sepwid = 0.464
+% Set threecolwid to be (3*onecolwid)+2*sepwid = 0.708
+
+\newlength{\sepwid}
+\newlength{\onecolwid}
+\newlength{\twocolwid}
+\newlength{\threecolwid}
+\setlength{\paperwidth}{36in} % A0 width: 46.8in
+\setlength{\paperheight}{24in} % A0 height: 33.1in
+\setlength{\sepwid}{0.01\paperwidth}
+\setlength{\onecolwid}{0.17\paperwidth}
+\setlength{\twocolwid}{0.36\paperwidth}
+\setlength{\threecolwid}{0.55\paperwidth}
+\setlength{\topmargin}{-0.5in}
+%\usetheme{confposter}
+%\usepackage{exscale}
+%-----------------------------------------------------------
+
+\usepackage{geometry}
+\geometry{paperwidth=36in, paperheight=24in, top=0in}
+\usepackage{graphicx}  % Required for including images
+\usepackage{subfigure}
+\usepackage{booktabs} % Top and bottom rules for tables
+\newcommand{\sm}[4]{\left(\begin{smallmatrix}#1&#2\\#3&#4\end{smallmatrix} \right)}
+
+%----------------------------------------------------------------------------------------
+% NEW COMMANDS 
+%----------------------------------------------------------------------------------------
+%%Greek letters
+\newcommand{\gep}{\epsilon}
+\newcommand{\gl}{\lambda}
+\newcommand{\ga}{\alpha}
+\newcommand{\gb}{\beta}
+\newcommand{\gd}{\delta}
+\newcommand{\gG}{\Gamma}
+\newcommand{\gL}{\Lambda}
+\newcommand{\GG}{\Gamma}
+\newcommand{\w}{\omega}
+
+%%Boldface letters
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\E}{\mathbb{E}}
+
+%%%%%%%%%%%%%%%A NEW SET OF COMMANDS %%%%%%%%%%%%
+\DeclareMathOperator{\sgn}{sgn}
+
+\renewcommand \l {\lambda}
+\renewcommand \r {\rho}
+
+\newcommand{\M}{\mathbb{M}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\D}{\mathbb{D}}
+\renewcommand{\H}{\mathbb{H}}
+\renewcommand{\O}{\mathcal{O}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\curleps}{\mathcal{E}}
+\renewcommand{\Re}[1]{\text{Re}(#1)}
+\renewcommand{\Re}{\mathfrak{Re}}
+\renewcommand{\Im}[1]{\text{Im}(#1)}
+\newcommand{\cov}{\text{Cov}}
+\newcommand{\var}{\text{Var}}
+\newcommand{\pfrac}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\liminfty}{\lim_{n\rightarrow \infty}}
+\newcommand{\deriv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\dderiv}[2]{\frac{d #1}{d #2}}
+\newcommand{\tth}{^{\operatorname{th}}}
+\newcommand{\Trace}{\text{Trace}}
+\newcommand{\Tr}{\text{Tr}}
+\DeclareMathOperator{\tr}{Tr}
+\newcommand{\etr}{\mathbb{E}\;\tr\;}
+\newcommand{\ektr}{\mathbb{E}_k\;\tr\;}
+\newcommand{\ecktr}{\mathbb{E}_k^\C\;\tr\;}
+\newcommand{\ehktr}{\mathbb{E}_k^\H\;\tr\;}
+
+\newcommand*{\LargerCdot}{\raisebox{-0.25ex}{\scalebox{2.0}{$\cdot$}}}
+
+\newcommand*{\exone}[1]{{#1}_{\widehat{1}}}
+\newcommand*{\extwo}[1]{{#1}_{\widehat{1},\widehat{2}}}
+
+\newcommand*{\zetaone}[1]{\zeta_{#1}}
+\newcommand*{\zetatwo}[2]{\zeta_{#1,#2}}
+
+\newcommand*{\HL}[1]{R_{#1}(x;t)}
+\newcommand*{\WD}[1]{\Delta_{#1}}
+\newcommand*{\defWD}[2]{\Delta_{#1}(#2)}
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION 
+%----------------------------------------------------------------------------------------
+\title{\Huge Generative Approaches to Object-Aware Trajectory Generation}
+\author{\LARGE Shubh Gupta, Dan Johnson, Nhi Truong}
+\institute{\Large Stanford University, CS 236} % Institution(s)
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%\addtobeamertemplate{headline}{}
+
+
+%\addtobeamertemplate{block end}{}{\vspace*{1ex}} % White space under blocks
+%\addtobeamertemplate{block alerted end}{}{\vspace*{1ex}} % White space under highlighted (alert) blocks
+
+%\setlength{\belowcaptionskip}{2ex} % White space under figures
+%\setlength\belowdisplayshortskip{2ex} % White space under equations
+
+\begin{frame}[t] % The whole poster is enclosed in one beamer frame
+\maketitle
+\end{frame} % End of the enclosing frame
+\end{document}

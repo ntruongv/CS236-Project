@@ -1,0 +1,16 @@
+## Bash project 
+
+# Set working directory
+export cur_wd="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+# Current files working on
+export run_op=""
+export run_file="./compile_movie.sh"
+export other_file1=""
+export other_file2=""
+export other_file3=""
+export other_file4=""
+
+# Anaconda env
+conda deactivate
+conda activate homework
