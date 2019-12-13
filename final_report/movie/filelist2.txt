@@ -1,0 +1,64 @@
+file frames/col_3frame00_20.png
+REPLACE
+file frames/col_3frame01_20.png
+REPLACE
+file frames/col_3frame02_20.png
+REPLACE
+file frames/col_3frame03_20.png
+REPLACE
+file frames/col_3frame04_20.png
+REPLACE
+file frames/col_3frame05_20.png
+REPLACE
+file frames/col_3frame06_20.png
+REPLACE
+file frames/col_3frame07_20.png
+REPLACE
+file frames/col_3frame08_20.png
+REPLACE
+file frames/col_3frame09_20.png
+REPLACE
+file frames/col_3frame10_20.png
+REPLACE
+file frames/col_3frame11_20.png
+REPLACE
+file frames/col_3frame12_20.png
+REPLACE
+file frames/col_3frame13_20.png
+REPLACE
+file frames/col_3frame14_20.png
+REPLACE
+file frames/col_3frame15_20.png
+REPLACE
+file frames/nocol_2frame00_130.png
+REPLACE
+file frames/nocol_2frame01_130.png
+REPLACE
+file frames/nocol_2frame02_130.png
+REPLACE
+file frames/nocol_2frame03_130.png
+REPLACE
+file frames/nocol_2frame04_130.png
+REPLACE
+file frames/nocol_2frame05_130.png
+REPLACE
+file frames/nocol_2frame06_130.png
+REPLACE
+file frames/nocol_2frame07_130.png
+REPLACE
+file frames/nocol_2frame08_130.png
+REPLACE
+file frames/nocol_2frame09_130.png
+REPLACE
+file frames/nocol_2frame10_130.png
+REPLACE
+file frames/nocol_2frame11_130.png
+REPLACE
+file frames/nocol_2frame12_130.png
+REPLACE
+file frames/nocol_2frame13_130.png
+REPLACE
+file frames/nocol_2frame14_130.png
+REPLACE
+file frames/nocol_2frame15_130.png
+REPLACE

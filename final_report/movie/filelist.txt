@@ -1,3 +1,32 @@
-file 'segments/introduction.mp4'
-file 'segments/methodology.mp4'
-file 'segments/zara.mp4'
+file frames/nocol_0frame00_119.png
+REPLACE
+file frames/nocol_0frame01_119.png
+REPLACE
+file frames/nocol_0frame02_119.png
+REPLACE
+file frames/nocol_0frame03_119.png
+REPLACE
+file frames/nocol_0frame04_119.png
+REPLACE
+file frames/nocol_0frame05_119.png
+REPLACE
+file frames/nocol_0frame06_119.png
+REPLACE
+file frames/nocol_0frame07_119.png
+REPLACE
+file frames/nocol_0frame08_119.png
+REPLACE
+file frames/nocol_0frame09_119.png
+REPLACE
+file frames/nocol_0frame10_119.png
+REPLACE
+file frames/nocol_0frame11_119.png
+REPLACE
+file frames/nocol_0frame12_119.png
+REPLACE
+file frames/nocol_0frame13_119.png
+REPLACE
+file frames/nocol_0frame14_119.png
+REPLACE
+file frames/nocol_0frame15_119.png
+REPLACE
